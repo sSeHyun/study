@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>웹브라우저 탭의 제목</title>
+</head>
+<body>
+	<!-- ctrl + shift + / : 주석처리 단축키  -->
+	<!--  
+		주석처리된 블럭
+		//smentic tag : 실제 내용이 적용되지 않는 메타정보(정보차원의 tag)
+	-->
+	
+	<header>
+	 	이영역은 웹문서의 Header영역입니다!
+	</header>
+	<main>
+		<sction>
+		<!-- 2. 제목형 태그 h1~5  -->
+			<h3>이 영역은 웹문서의 main 태그의 첫 번째 section영역입니다.</h3>
+		</sction>
+		<sction>
+		<!-- 제목형 태그 h1~5  -->
+			<h3>이 영역은 웹문서의 main 태그의 두 번째 section영역입니다.</h3>
+		</sction>
+		<!--이클립스 단축키 : block or line 복사 : ctrl + alt + up/down 키  -->
+	</main>
+	<footer>
+		<h4>전화번호 : 02.123.123</h4>
+		<h4>주 소 : 서울 서초구 </h4>
+		<h4>홈페이지 : www.naver.com</h4>
+	</footer>
+	<!--3. hr : head line tag <hr></hr> or <hr/>  -->
+	<hr />
+	<!--4. anchor tag 
+		   속성(attribute) href : goto의미
+	-->
+	<a href="http://www.naver.com">네이버로 가기</a>
+	<a href="http://localhost.">네이버로 가기</a>
+
+
+	
+	
+</body>
+</html>

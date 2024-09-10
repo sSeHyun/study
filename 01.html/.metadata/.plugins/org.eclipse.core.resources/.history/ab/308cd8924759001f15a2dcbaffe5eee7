@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+input[type=text]{
+	background-color:red;
+}
+input[type=password]{
+	background-color:blue;
+}
+img[type=jpg]{
+	border:3px solid blue;
+	 border-image: URL(images/sena.jpg) 30 / 15px; 
+}
+img[type=png]{
+	border:3px solid red;
+}
+img[type=gif]{
+	border:3px solid green;
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./css/active.css" />
+</head>
+<body>
+	<h1>Action Selector</h1>
+	
+	<h2>Enabled</h2>
+	<input type="text" />
+	<h2>Disabled</h2>
+	<input type="text" disabled />
+
+</body>
+</html>

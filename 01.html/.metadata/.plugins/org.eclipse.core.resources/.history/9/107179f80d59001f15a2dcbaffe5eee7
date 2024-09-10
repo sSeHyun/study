@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Audio/Video Tag</h1>
+	
+	<audio controls src="./multimedia/Kalimba.mp3">	</audio>
+	
+	<audio controls="controls">
+		<source src="./multimedia/Kalimba.mp3"></source> <!-- 크롬에서 구동 가능 -->
+		<source src="./multimedia/Kalimba.ogg"></source> <!-- 인터넷 익스플로러에서 구동 불가능 -->
+	</audio>
+		
+
+	<hr />
+	
+	<video controls src="/multimedia/Wildlife.mp4"></video>
+	<video controls>
+		<source src="/multimedia/Wildlife.webm"></source>
+	</video>
+</body>
+</html>

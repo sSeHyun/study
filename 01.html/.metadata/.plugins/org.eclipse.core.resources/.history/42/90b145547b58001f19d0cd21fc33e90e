@@ -1,0 +1,18 @@
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>태그의 속성(Attribute)</title>
+</head>
+<body>
+	<!--h1 태그 속성  -->
+	<h1>태그 속성</h1>
+	<!-- 경로(path)
+			./ : 현재 폴더 -> public 폴더
+			../ : 부모(상위) 폴더  -> 01.basic폴더를 가리킴
+	  -->
+	  <h4>img 태그</h4>	  
+	  <img src="" alt="이미지가 없습니다." />
+	 
+
+</body>
+</html>

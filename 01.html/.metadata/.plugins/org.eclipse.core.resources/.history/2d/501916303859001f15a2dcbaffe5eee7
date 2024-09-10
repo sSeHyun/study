@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/* css 선택자 
+		1. 전체 선택자 : *
+		2. 태그 선택자 : h1~6, a, div...등
+	*/
+	
+	*{color:red;} /*전체 선택자*/
+	h1{color:green;} /*태그 선택자*/ 
+	h1{color:yellow;}
+	
+</style>
+</head>
+<body>
+	<h1 style="color:blue;"> CSS3 Selector Basic</h1>
+<!--  h1{color:red;} -> 선택자{스타일속성:스타일값;} -->
+
+	<h1>1</h1>
+	<h1>2</h1>
+	<h1>3</h1>
+	
+	<h3>1</h3>
+	<h3>2</h3>
+	<h3>3</h3>
+	
+</body>
+</html>

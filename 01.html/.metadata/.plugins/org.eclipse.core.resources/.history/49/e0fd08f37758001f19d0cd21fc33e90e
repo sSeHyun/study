@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>웹브라우저 탭의 제목</title>
+</head>
+<body>
+	<!-- ctrl + shift + / : 주석처리 단축키  -->
+	<!--  
+		주석처리된 블럭
+		//smentic tag : 실제 내용이 적용되지 않는 메타정보(정보차원의 tag)
+	-->
+	<header>
+	 	이영역은 웹문서의 Header영역입니다!
+	</header>
+	
+</body>
+</html>

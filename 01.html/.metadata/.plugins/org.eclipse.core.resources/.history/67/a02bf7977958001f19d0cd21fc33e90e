@@ -1,0 +1,10 @@
+<!DOCTYPE html>  <!-- HTML 버전이 무엇인지를 웹 브라우저에 알려주는 역할을 하는 선언문 -->
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<a href="./01.sementic.html">sementic.html</a>
+</body>
+</html>

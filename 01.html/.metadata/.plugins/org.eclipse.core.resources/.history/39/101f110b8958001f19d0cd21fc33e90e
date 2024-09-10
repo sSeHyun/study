@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>Table Tag</h1>
+	<h5><a href="https://developer.mozilla.org/ko/docs/Web/HTML">mdn.web.doc</a></h5>
+	<table  border="1">
+	<caption>	
+		게시판
+	</caption>
+	<thead>
+		<tr>
+			<th>글번호</th>
+			<th>제목</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1.</td>
+			<td>금메달</td>
+		</tr>
+		<tr>
+			<td>2.</td>
+			<td>은메달</td>
+		</tr>
+		<tr>
+			<td>3.</td>
+			<td>동메달</td>
+		</tr>
+		<tr>
+			<td>4.</td>
+			<td>노메달</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td>전화번호</td>
+			<td>02.1234.5678</td>
+		</tr>
+	</tfoot>	
+	</table>
+<hr />
+
+	
+	<!-- 실습 1. 수업시간표 작성하기  
+		교시 	월   화 	수 		목 		금 		토 		일 
+		1교시  영어 수학
+		  .
+		  .
+		8교시   
+	-->
+	
+	<h3>실습 1. 수업 시간표 작성하기</h3>
+	<!-- table>caption+(thead>tr>th*8)+(tbody>(tr>td*8)*8)+(tfoot>tr>td) -->
+	<caption>	
+		수업 시간표 
+	</caption>
+	
+	  <style>
+        table{
+            border: 1px solid gray;
+            border-collapse: collapse;  
+        }
+        tr,th,td{
+            border: 1px solid purple;
+            text-align: center;
+        }        
+    </style>
+    
+	<table>
+	<thead>
+		<tr>
+			<th>교시</th>
+			<th>월</th>
+			<th>화</th>
+			<th>수</th>
+			<th>목</th>
+			<th>금</th>
+			<th>토</th>
+
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr>
+			<th>1교시</th>
+			<td>국어</td>
+			<td>영어</td>
+			<td>한국사</td>
+			<td>수학</td>
+			<td>과학</td>
+			<td>과학</td>
+		</tr>
+		<tr>
+			<th>2교시</th>
+			<td>영어</td>
+			<td>영어</td>
+			<td>한국사</td>
+			<td>수학</td>
+			<td>한국사</td>
+			<td>수학</td>
+		</tr>
+		<tr>
+			<th>3교시</th>
+			<td>한국사</td>
+			<td>국어</td>
+			<td>영어</td>
+			<td>한국사</td>
+			<td>수학</td>
+			<td>과학</td>
+		</tr>
+		<tr>
+			<th>4교시</th>
+			<td>수학</td>
+			<td>국어</td>
+			<td>영어</td>
+			<td>국어</td>
+			<td>과학</td>
+			<td>과학</td>
+		</tr>
+		<tr>
+			<th>5교시</th>
+			<td>수학</td>
+			<td>수학</td>
+			<td>국어</td>
+			<td>영어</td>
+			<td>과학</td>
+			<td>과학</td>
+		</tr>
+		<tr>
+			<th>6교시</th>
+			<td>과학</td>
+			<td>한국사</td>
+			<td>수학</td>
+			<td>국어</td>
+			<td>과학</td>
+			<td>과학</td>
+		</tr>
+		<tr>
+			<th>7교시</th>
+			<td>과학</td>
+			<td>수학</td>
+			<td>국어</td>
+			<td>과학</td>
+			<td>과학</td>
+			<td>한국사</td>
+		</tr>
+		<tr>
+			<th>8교시</th>
+			<td>음악</td>
+			<td>국어</td>
+			<td>과학</td>
+			<td>과학</td>
+			<td>한국사</td>
+			<td>과학</td>
+		</tr>	
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="7"> 2024.08.12</td>
+		</tr>
+
+
+</body>
+</html>

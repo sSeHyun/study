@@ -1,0 +1,10 @@
+INDEX VERSION 1.4+D:\sena\01.html\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2454437215.index
+2221314541.index
+1642075953.index
+4253881634.index
+3313047857.index
+3809450418.index
+947303174.index
+4050759060.index
+836419182.index

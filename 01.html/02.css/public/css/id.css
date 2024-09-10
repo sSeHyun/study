@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+	/*실습 
+		id가 header인 태그 : 넓이 800, 배경색 red
+		id가 wrap인 태그 : 넓이 800
+		id가 aside인 태그: 넓이 200, 배경색 blue
+		id 가 content인 태그 : 넓이 600, 배경색 green
+	*/
+	
+	#header{
+		width:800px;
+		background-color:red;
+		margin:auto;
+	}
+	#wrap{
+		width:800px;
+		overflow:hidden;
+	}
+	#aside{
+		width:200px;
+		height:300px;
+		background-color:blue;
+		float:left;
+		margin: 10px 10px 10px 10px; /*상>우>하>좌 순서*/
+	}
+	#content{
+		width:540px;
+		height:300px;
+		background-color:green;
+		float:left;
+			
+		/* 
+			margin: 상우하좌
+			margin: 상하좌우
+			margin:auto
+		*/
+		margin:10px 10px 10px 10px;
+		padding:10px 10px 10px 10px; 
+
+	}
+	
+		

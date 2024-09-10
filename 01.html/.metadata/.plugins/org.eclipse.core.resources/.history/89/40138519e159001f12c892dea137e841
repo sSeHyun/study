@@ -1,0 +1,30 @@
+@charset "UTF-8";
+/* active : 클릭 즉, 포커스가 있을 때
+	hover : 마우스가 태그 위에 있을때. 
+	상태 선택자 enabled,disabled,focus	
+*/
+
+h1:hover{color:red;}
+h1:active{color:blue;}
+
+input:enabled{
+	background-color:green;
+}
+input:disabled{
+	background-color:black;
+}
+input:focus{
+	background-color:red;
+}
+input[type="checkbox"]:checked + div{
+	height:0px;
+}
+div{
+	overflow:hidden;
+	width:650px;
+	height:300px;
+	-ms-transition-duration:1s; /*IEm ,edge*/
+	-webkit-transition-duration:1s; /*chrome*/
+	-moz-transition-duration:1s /*netscape mozila firefox*/
+	transition-duration:1s;
+}

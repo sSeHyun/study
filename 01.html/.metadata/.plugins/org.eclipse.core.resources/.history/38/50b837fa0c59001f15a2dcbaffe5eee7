@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Audio/Video Tag</h1>
+	
+	<audio>
+		<source src="./multimedia/Kalimba.mp3"></source>
+	</audio>
+	<hr />
+	
+	<video src="/multimedia/"></video>
+</body>
+</html>

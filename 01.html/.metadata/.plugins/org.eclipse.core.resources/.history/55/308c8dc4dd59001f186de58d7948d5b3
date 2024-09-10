@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/*
+	+ : 선택자A + 선택자 B -> 바로 뒤에 위치한 태그를 선택함
+	~ : 선택자A ~ 선택자 B -> 뒤에 위치한 태그를 선택함
+	
+	수열(nth) 선택자 : 
+	 - first-child
+	 - last-child
+	 - nth-child
+*/
+
+h1+h2{
+	color:red;
+}
+h1~h2{
+	background:orange;
+}
+
+/* div 첫 번째 h3의 글자색을 red*/
+div h3:first-child{
+	color:red;
+}
+/* div 마지막 h3의 글자색을 blue, 배경색을 orange*/
+div h3:last-child{
+	color:blue;
+	background:orange;
+}
+/* div 2n의 h3 글자색을 green*/
+div h3:nth-child(2n){
+	color:green;
+}

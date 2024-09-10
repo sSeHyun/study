@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/* css 선택자 
+		1. 전체 선택자 : *
+		2. 태그 선택자 : h1~6, a, div...등
+		3. 아이디 선택자 : #아이디이름
+		4. 클래스 선택자 : .클래스이름
+	*/
+	
+	*{color:red;} /*전체 선택자*/
+	h1{color:green;} /*태그 선택자*/ 
+	h1{color:yellow;}
+	h3{color:pink;}
+
+	#header{
+		color:mediumseagreen;
+		width:100px;
+		height:100px;
+		background-color:skyblue;
+		}
+	div{
+		color:mediumseagreen;
+		width:100px;
+		height:100px;
+		background-color:skyblue;
+		
+	}
+	.div1{
+		background-color:blue;
+		width:50px;
+		height:50px;
+		color:white;
+	}
+</style>
+</head>
+<body>
+	<h1 style="color:blue;"> CSS3 Selector Basic</h1>
+<!--  h1{color:red;} -> 선택자{스타일속성:스타일값;} -->
+
+	<h1>1</h1>
+	<h1>2</h1>
+	<h1>3</h1>
+	
+	<h3>1</h3>
+	<h3 id="header">2</h3>
+	<h3>3</h3>
+	
+	<a href="#header">header</a>
+	<hr />
+	
+	<div class="div1"></div>
+	<div></div>
+	<div class="div1"></div>
+	<div></div>
+	
+</body>
+</html>

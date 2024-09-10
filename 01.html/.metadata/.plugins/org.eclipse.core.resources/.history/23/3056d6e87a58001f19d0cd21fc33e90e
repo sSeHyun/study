@@ -1,0 +1,15 @@
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>태그의 속성(Attribute)</title>
+</head>
+<body>
+	<!--h1 태그 속성  -->
+	<h1>태그 속성</h1>
+	<!-- 1. 경로(path)
+			./ : 현재 폴더 -> public 폴더
+			../ : 부모(상위) 폴더
+	  -->
+
+</body>
+</html>

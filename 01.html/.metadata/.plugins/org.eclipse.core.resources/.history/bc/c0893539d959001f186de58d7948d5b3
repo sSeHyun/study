@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./css/descendant.css" />
+</head>
+<body>
+	<h1>자손 / 후손 선택자</h1>
+	<div id="header">
+		<h1 class="title">제목..</h1>
+		
+		<div id="nav">
+			<h1>Navigation</h1>
+		</div>
+		
+		<div id="section">
+			<h1 class="title">제목...</h1>
+			<p>베페 : 나는 대학시절 묵찌빠를 전공했단 사실 니 놈을 이겨 눈물 콧물 쏙 다 빼주마 / 가스파로 :난 묵찌빠로 유학까지 다녀왔단 사실니 놈을 이겨 가문의 이름 높이리</p>
+		</div>
+	</div>
+	<hr />
+	
+	<table border="1">
+	<tr>
+		<th>이름</th>
+		<th>지역</th>
+	</tr>
+	<tr>
+		<th>홍길동</th>
+		<th>조선 한양</th>
+	</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<server port="8080">
+  <module context="03.responsive" name="03.responsive" path="D:/sena/01.html/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/03.responsive" type="static"/>
+</server>

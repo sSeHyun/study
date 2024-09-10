@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<server port="8080">
+  <module context="study" name="study" path="D:/sena/javascript/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/study" type="static"/>
+</server>

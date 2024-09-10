@@ -1,0 +1,39 @@
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>태그의 속성(Attribute)</title>
+</head>
+<body>
+	<!--h1 태그 속성  -->
+	<h1>태그 속성</h1>
+	<!-- 경로(path)
+			./ : 현재 폴더 -> public 폴더
+			../ : 부모(상위) 폴더  -> 01.basic폴더를 가리킴
+	  -->
+	  <h4>img 태그</h4>	  
+	  <img src="./images/sena.jpg" alt="이미지가 없습니다!" 
+	  		width="700" height="700"
+	  />
+	  
+	 <!-- 
+	 	1. h1~6 : 제목 태그
+	 	2. p : 단락 태그
+	 	3. br : 개행 태그
+	 	4. a : 앵커 태그
+	 	5. b : bold체
+	 	6. i : 이텔릭체
+	 	7. sub : 아래첨자
+	 	8. del : 삭제표시
+	 	9. ins : underline 
+	   10. small : 작은글씨 
+	  -->
+	  
+	  <h4>글자태그</h4>
+	  <p>
+	  	<h1>What is Lorem Ipsum?</h1>
+	  </p>
+	  <p>
+	  	<b><i>Lorem Ipsum</b></i> is simply dummy text of the printing and typesetting <sub>industry.</sub><br> <i><ins>Lorem Ipsum</i></ins> has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially <del>unchanged</del>. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+	  </p>
+</body>
+</html>

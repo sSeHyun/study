@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style> 
+		div{
+			/*css 파일의 주석*/
+		
+			background-color:pink;	
+			width:100px;
+			height:100px;	
+		}
+		span{
+			background-color:skyblue;	
+				/*span에서는 아래의 속성이 없다.*/
+			width:100px;
+			height:100px;	
+		}
+		h1{
+			color:white;
+			background-color : black;
+		}
+	</style>
+</head>
+<body>
+	<h1>div tag</h1>
+	<div style="background-color:yellow">1</div>
+	<div style="width:50px; height:50px">2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<hr />
+	
+	<span>1</span>
+	<span>2</span>
+	<span>3</span>
+	<span>4</span>
+	<span>5</span>
+	
+<!-- 실습1. h1태그의 style을 배경은 검정색, 글자색 하얀색
+ 			width:100px, height:100px -->
+	 <h1> 실습1. h1 태그</h1>
+	 
+
+</body>
+</html>

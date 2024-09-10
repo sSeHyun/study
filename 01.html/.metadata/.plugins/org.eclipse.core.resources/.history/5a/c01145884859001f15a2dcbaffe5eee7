@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+input[type=text]{
+	background-color:red;
+}
+input[type=password]{
+	background-color:blue;
+}
+img.jpg{
+	border:3px solid blue;
+}
+img.png{
+	border:3px solid red;
+}
+img.gif{
+	border:3px solid green;
+}

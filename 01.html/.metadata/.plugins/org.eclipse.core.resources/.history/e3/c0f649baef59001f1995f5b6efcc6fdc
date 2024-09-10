@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Insert title here</title>
+<style>
+	#wrapper1{
+
+	}
+	#wrapper2{
+	
+	}
+	.itmes{
+		padding:10px;
+		background-color:pink;
+	}
+	.itmes:nth-child(odd){
+		background-color:orange;
+		
+	}
+	
+	
+</style>
+</head>
+<body>
+	<h1>auto-fill일 경우</h1>
+    <div id="wrapper">
+      <div class="items">
+        Using a grid-view is very helpful when designing web pages. It makes it
+        easier to place elements on the page. Using a grid-view is very helpful
+        when designing web pages. It makes it easier to place elements on the
+        page. Using a grid-view is very helpful when designing web pages. It
+        makes it easier to place elements on the page.
+      </div>
+      <div class="items">
+        Using a grid-view is very helpful when designing web pages. It makes it
+        easier to place elements on the page. Using a grid-view is very helpful
+        when designing web pages. It makes it easier to place elements on the
+        page. Using a grid-view is very helpful when designing web pages. It
+        makes it easier to place elements on the page.
+      </div>
+      <div class="items">
+        Using a grid-view is very helpful when designing web pages. It makes it
+        easier to place elements on the page. Using a grid-view is very helpful
+        when designing web pages. It makes it easier to place elements on the
+        page. Using a grid-view is very helpful when designing web pages. It
+        makes it easier to place elements on the page.
+      </div>
+      <div class="items">
+        Using a grid-view is very helpful when designing web pages. It makes it
+        easier to place elements on the page. Using a grid-view is very helpful
+        when designing web pages. It makes it easier to place elements on the
+        page. Using a grid-view is very helpful when designing web pages. It
+        makes it easier to place elements on the page.
+      </div>
+      <div class="items">
+        Using a grid-view is very helpful when designing web pages. It makes it
+        easier to place elements on the page. Using a grid-view is very helpful
+        when designing web pages. It makes it easier to place elements on the
+        page. Using a grid-view is very helpful when designing web pages. It
+        makes it easier to place elements on the page.
+      </div>
+    </div>
+    
+    <h1>auto-fill일 경우</h1>
+    <div id="wrapper">
+      <div class="items">
+        Using a grid-view is very helpful when designing web pages. It makes it
+        easier to place elements on the page. Using a grid-view is very helpful
+        when designing web pages. It makes it easier to place elements on the
+        page. Using a grid-view is very helpful when designing web pages. It
+        makes it easier to place elements on the page.
+      </div>
+      <div class="items">
+        Using a grid-view is very helpful when designing web pages. It makes it
+        easier to place elements on the page. Using a grid-view is very helpful
+        when designing web pages. It makes it easier to place elements on the
+        page. Using a grid-view is very helpful when designing web pages. It
+        makes it easier to place elements on the page.
+      </div>
+      <div class="items">
+        Using a grid-view is very helpful when designing web pages. It makes it
+        easier to place elements on the page. Using a grid-view is very helpful
+        when designing web pages. It makes it easier to place elements on the
+        page. Using a grid-view is very helpful when designing web pages. It
+        makes it easier to place elements on the page.
+      </div>
+      <div class="items">
+        Using a grid-view is very helpful when designing web pages. It makes it
+        easier to place elements on the page. Using a grid-view is very helpful
+        when designing web pages. It makes it easier to place elements on the
+        page. Using a grid-view is very helpful when designing web pages. It
+        makes it easier to place elements on the page.
+      </div>
+      <div class="items">
+        Using a grid-view is very helpful when designing web pages. It makes it
+        easier to place elements on the page. Using a grid-view is very helpful
+        when designing web pages. It makes it easier to place elements on the
+        page. Using a grid-view is very helpful when designing web pages. It
+        makes it easier to place elements on the page.
+      </div>
+    </div>
+</body>
+</html>

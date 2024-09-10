@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+/*
+	문자 선택자 
+	 - ::first-letter
+	 - ::first-line
+	 - ::selection
+	 
+	 *html_fontsize 속성 비교 검색해서 보기(em,%....)
+
+*/
+p::first-letter{
+	font-size:3em;	
+}
+
+p::first-line{
+	color:red;
+}
+p::selection{
+	background:black;
+	color:white;
+}

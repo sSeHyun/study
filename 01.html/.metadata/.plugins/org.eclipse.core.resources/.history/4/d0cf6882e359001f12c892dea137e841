@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/*
+	문자 선택자 
+	 - ::first-letter
+	 - ::first-line
+	 - ::selection
+	 
+	 *html_fontsize 속성 비교 검색해서 보기
+
+*/
+p::first-letter{
+	font-size:300%;	
+}
+
+p::first-line{
+	
+}
+p::selection{
+	
+}

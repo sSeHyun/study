@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modules>
+  <module moduleId="org.eclipse.wst.web.internal.deployables.static:01.basic" serverId="HTTP Preview at localhost"/>
+  <module moduleId="org.eclipse.wst.web.internal.deployables.static:03.responsive" serverId="HTTP Preview at localhost"/>
+  <module moduleId="org.eclipse.wst.web.internal.deployables.static:02.css" serverId="HTTP Preview at localhost"/>
+</modules>

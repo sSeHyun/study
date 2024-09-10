@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./css/active.css" />
+</head>
+<body>
+	<h1>Action Selector</h1>
+	
+	<h1>상태선택자</h1>
+	<h2>Enabled,Focus</h2>
+	<input type="text" />
+	
+	<h2>Disabled</h2>
+	<input type="text" disabled />
+
+	<h2>CheckBox</h2>
+	여기를 체크해 보세요!<input type="checkbox" />
+</body>
+</html>

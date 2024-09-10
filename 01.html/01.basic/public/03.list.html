@@ -1,0 +1,64 @@
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<h4>목록 태그</h4>
+	<!-- LIST TAG 
+		1. ul : 순서가 없는 목록 태그
+		2. ol : 순서가 있는 목록 태그
+		3. li : ul/ol의 자식요소		
+	-->
+	
+	<h5>ul : 순서가 없는 목록 태그</h5>
+	<ul>
+		<li>손흥민</li>
+		<li>김민재</li>
+		<li>이강인</li>
+	</ul>
+	
+	<h5>ol : 순서가 있는 목록 태그</h5>
+	<ol>
+		<li>손흥민</li>
+		<li>김민재</li>
+		<li>이강인</li>
+	</ol>
+	
+	<h5>모자 관계 제한이 없는 태그</h5>
+	<!--ul>(li>ol>li*3)*3  -->
+	<ul>
+		<li>
+			<ol>
+			<li>손흥민</li>
+			<li>김민재</li>
+			<li>이강인</li>
+			</ol>
+		</li>
+		<li>
+			<ol>
+				<li>손흥민</li>
+				<li>김민재</li>
+				<li>이강인</li>
+			</ol>
+		</li>
+		<li>
+			<ol>
+				<li>손흥민</li>
+				<li>김민재</li>
+				<li>이강인</li>
+			</ol>
+		</li>
+	</ul>
+	
+		<h5>정의 목록 dl/dd</h5>
+		<dl>
+			<dd>HTML5</dd>
+			<dd>CSS3</dd>
+			<dd>JavaScript</dd>
+			<dt>WEB</dt>	
+			<dd>CSS3</dd>
+		</dl>
+	
+</body>
+</html>

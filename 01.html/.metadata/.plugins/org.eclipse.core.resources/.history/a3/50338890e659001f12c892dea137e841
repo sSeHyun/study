@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>*{
+	margin:0;
+	box-sizing:border-box;
+}
+body{
+	background:url(./images/bg5.jpg) no-repeat left top fixed; 
+	background-sizw:cover;
+	display:flex;
+}
+</style>
+</head>
+<body>
+	<button>클릭!!</button>
+</body>
+</html>

@@ -1,0 +1,4 @@
+강의 자료 : https://github.com/inwookbaek
+파일탐색기 -> \\192.168.100.251
+
+git config --global core.autocrlf true
