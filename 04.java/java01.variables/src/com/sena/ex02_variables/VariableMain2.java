@@ -1,4 +1,4 @@
-package com.lec.ex02_variables;
+package com.sena.ex02_variables;
 
 public class VariableMain2 {
 
@@ -60,7 +60,36 @@ public class VariableMain2 {
 //		l1 = (long) -2147483649; 에러
 //		l2 = (long) 2147483648;  에러
 		
-		// b. 참조타입(reference)
+		//2) 실수: float, double
+		//실수의 기본타입: double
+		//따라서 float 데이터 타입으로 선언하려면 실수 뒤에 F or f로 선언
+		//실수를 double로 선언하려면 생략(기본값)하거나 실수 뒤에 D or d로 선언
+		System.out.println("float의 최소값:"+Float.MIN_VALUE + "folat의 최대값:"+Float.MAX_VALUE);
+		System.out.println("double의 최소값:"+Double.MIN_VALUE + "Double의 최대값:"+Double.MAX_VALUE);
+		
+		
+		//float f1=1.0; //실수의 기본타입은 double이기때문에 float로 변환(선언)해야한다.
+		float f2=1.0f; 
+		System.out.println("f2="+ f2);
+		
+		//나) double
+		double d1=1.0;
+		double d2=1.0D;
+		double d3=1.0d;
+		double d4=3.141592;
+		
+		System.out.println("d1:"+d1+", d2:"+d2+", d3:"+d3+", d4:"+d4);
+		
+		//3) 논리형(boolean(1byte))
+		//값은 true, false, 내부적으로는 true=1, false=0의 정수값을 가진다.
+		boolean bool1=true;
+		boolean bool2=false;
+		
+		System.out.println("bool1="+bool1+" ,bool2:"+bool2);
+	
+	
+		
+		
 		
 
 	}
