@@ -4,26 +4,18 @@ class MyTv3{
 	int channel;
 	int prevChannel;
 	
-	public void setChannel(int channelNum) {
-		this.channel=channelNum;
-		this.prevChannel=channel;
+	public void setChannel(int channel) {
+		prevChannel=this.channel;
+		this.channel=channel;
 	}
 
 	public int getChannel() {
 		return channel;
 	}
 	
-	public int gotoPrevChannel() {
-		int swap=0;
-		prevChannel= swap;
-		channel = prevChannel;
-		swap = prevChannel;
-		
-		return swap;
-	}
-	
-	
-	
+	public void gotoPrevChannel() {
+		setChannel(prevChannel);
+	}	
 }
 
 public class Exercise7_11 {
