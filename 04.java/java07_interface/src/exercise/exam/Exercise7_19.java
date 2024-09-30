@@ -1,7 +1,4 @@
 package exercise.exam;
-
-
-
 public class Exercise7_19 {
 	public static void main(String[] args) {
 		Buyer b=new Buyer();
@@ -22,15 +19,21 @@ class Buyer{
 	int i=0;
 	
 	void buy(Product19 p) {
-		//가진돈과 물건의 가격을 비교해서 가진돈이 적으면 메서드를 종료한다.
-		//가진돈이 충분하면 제품의 가젹을 가진돈에서 뺴고
-		//장바구니에 구입한 물건을 담느다.(add메서드호출)
+		if(this.money<p.price) {
+			System.out.println("잔액이 부족하여" + p +"를 구매 할 수 없습니다.");
+			return;
+		}
+		else{
+			money-=p.price;
+			add(p);
+		}
+	
 	}
 	void add(Product19 p) {
-		//작성해야함
+		
 	}
 	void summary() {
-		//작성해야함
+		
 		
 	}
 }

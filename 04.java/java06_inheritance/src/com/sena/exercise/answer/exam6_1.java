@@ -1,4 +1,4 @@
-package com.sena.exercise.exam;
+package com.sena.exercise.answer;
 class Employee6{
 	private String name;
 	
@@ -17,7 +17,7 @@ class Manager6 extends Employee6{
 		System.out.println(name);
 	}
 }
-public class exam6 {
+public class exam6_1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
