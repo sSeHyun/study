@@ -1,4 +1,4 @@
-package com.sena.exercise.exam;
+package com.sena.exercise.answer;
 
 class Person_{
 	private String name;

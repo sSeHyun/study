@@ -15,7 +15,7 @@ Rectangle의 면적은 width * height로 계산.
 
 2. 상속과 형변환을 활용한 동물 클래스
 
-문제:
+문제: 
 Animal이라는 상위 클래스를 만들고, 이를 상속받는 Dog와 Cat 클래스를 구현한다. 
 두 클래스 모두 makeSound() 메소드를 구현하여 각각 Bark!와 Meow!를 출력하게 만드세요.
 Animal 타입 배열에 여러 Dog와 Cat 객체를 담은 후, 각 객체의 소리를 출력한다.
