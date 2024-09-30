@@ -1,58 +1,39 @@
 package exercise.exam;
 
-class Unit{
+abstract class Unit{
 	int x,y;
-	public void move(int x,int y) {/*지정된 위치로 이*/};
-	public void stop() {/*현재 위치에 정지*/};
+	abstract void move(int x,int y);
+	abstract void stop();
 	
 }
 
 class Marine extends Unit{
-	Marine(){
-			
-	}
+	@Override
+	public void move(int x, int y) {}
 
 	@Override
-	public void move(int x, int y) {
-		// TODO Auto-generated method stub
-		super.move(x, y);
-	}
-
-	@Override
-	public void stop() {
-		// TODO Auto-generated method stub
-		super.stop();
-	} 
+	public void stop() {} 
+	
+	void stimPack() {/*스팀팩을 사용한다.*/}
 	
 }
 class Tank extends Unit{
 
 	@Override
-	public void move(int x, int y) {
-		// TODO Auto-generated method stub
-		super.move(x, y);
-	}
+	public void move(int x, int y) {}
 
 	@Override
-	public void stop() {
-		// TODO Auto-generated method stub
-		super.stop();
-	}
+	public void stop() {}
+	
+	void changeMode() {/*공격모드를 변환한다.*/}
 	
 }
 class Dropship extends Unit{
 
 	@Override
-	public void move(int x, int y) {
-		// TODO Auto-generated method stub
-		super.move(x, y);
-	}
-
+	public void move(int x, int y) {}
 	@Override
-	public void stop() {
-		// TODO Auto-generated method stub
-		super.stop();
-	}
+	public void stop() {}
 	void load() {}
 	void unload() {}
 	
