@@ -42,13 +42,21 @@ class Student6 implements Comparable{
 public class Exercise11_6 {
 	
 	static int getGroupCount(TreeSet tset,int from,int to) {
+		Student s1=new Student("",0,0,from,from,from);
+		Student s2=new Student("",0,0,to,to,to);
 		
+		return tset.subSet(s1, s2).size();
 	}
 
 	public static void main(String[] args) {
 		TreeSet set=new TreeSet(new Comparator() {
 			public int compare(Object o1,Object o2) {
-				
+				if(o1 instanceof Student &&o2 instanceof Student) {
+					Student s1=(Student) o1;
+					Student s2=(Student) o2;
+					return (int)(s1.getAverage()-s2.getAverage());
+				}
+				return -1;
 			}
 		});
 		

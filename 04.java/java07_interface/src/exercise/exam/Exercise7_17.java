@@ -44,7 +44,7 @@ class Dropship extends Unit{
 public class Exercise7_17 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
