@@ -1,0 +1,49 @@
+﻿실습. mysql에 회원관리애플리케이션 
+
+1) create table member
+
+member_id
+member_pw
+member_name
+member_age
+member_gender
+member_email
+
+메뉴
+1. 신규회원등록
+2. 전체회원조회
+3. 회원상세조회
+4. 회원정보수정
+5. 회원정보삭제
+6. 이름으로 검색
+7. email로 검색
+0. 종료
+
+
+1. BOARD 테이블 생성
+	
+		create table scott.board(
+			bno			number			not null primary key
+		  , subject		varchar2(100)	not null
+		  , writer		varchar2(50)	not null
+		  , content		varchar2(256)	
+		  , crtdate		date			default sysdate
+		  , readcnt		number			default 0
+		);
+		create sequence scott.board_bno_s
+	
+	2. jdbc.properties 생성
+	
+		1) DB접속정보
+		
+		2) sql정보
+		
+	3. board 프로그램
+		1) Board			 : 게시판 메인 클래스
+		2) BoardVO			 : 게시판 Model 클래스
+		3) ConnectionFactory : DB접속정보를 공통으로 사용하기 위한 클래스
+		4) BoardDAOService	 : 게시판 Interface 클래스
+		5) BoardDAOImpl		 : 게시판 구현 클래스
+		6) BoardFactory		 : 게시글 생성 클래스(Singleton클래스)
+		7) BoardMenu		 : 게시판 메인메뉴 클래스
+
