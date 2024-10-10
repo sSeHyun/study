@@ -8,5 +8,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="mysql-connector-j-8.3.0 (1).jar"/>
 	<classpathentry kind="lib" path="ojdbc11-23.5.0.24.07.jar"/>
+	<classpathentry kind="lib" path="JDBCConnector.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

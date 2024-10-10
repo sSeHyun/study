@@ -48,7 +48,7 @@ package ex02_board;
 	
 	3. board 프로그램
 	
-	   1) Board             : 게시판 메인 클래스
+	   1) BoardApp          : 게시판 메인 클래스
 	   2) BoardVO           : 게시판 Model 클래스
 	   3) ConnectionFactory : DB접속정보를 공통으로 사용하기 위한 클래스
 	   4) BoardDAOService   : 게시판 Interface 클래스
@@ -59,7 +59,9 @@ package ex02_board;
 */
 public class BoardApp {
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) throws Exception {
+		BoardMenu menu=new BoardMenu(1.0);
+		//menu.mainMenu();
+		menu.mainBoardMenu();
 	}
 }

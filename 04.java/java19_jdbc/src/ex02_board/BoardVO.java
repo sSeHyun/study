@@ -9,6 +9,15 @@ public class BoardVO {
 	private int readcnt;
 	private String crtdate;
 	
+	public BoardVO() {
+		this.bno = 0;
+		this.subject = null;
+		this.writer = null;
+		this.content = null;
+		this.readcnt = 0;
+		this.crtdate = null;
+	}
+	
 	public BoardVO(int bno, String subject, String writer, 
 			String content, int readcnt, String crtdate) {
 		this.bno = bno;
