@@ -16,9 +16,18 @@ public class MemberVO {
 		this.member_email=null;
 	}
 
+
+
 	public int getMember_id() {
 		return member_id;
 	}
+
+
+
+	public void setMember_id(int member_id) {
+		this.member_id = member_id;
+	}
+
 
 
 	public String getMember_pw() {
@@ -69,6 +78,10 @@ public class MemberVO {
 				" name: "+member_name+" age: "+member_age+
 				" gender: "+member_gender+" email: "+member_email;
 	}
+
+
+
+
 	
 
 }

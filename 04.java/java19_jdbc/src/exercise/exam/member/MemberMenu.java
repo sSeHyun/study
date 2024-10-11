@@ -3,8 +3,11 @@ package exercise.exam.member;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
+
+
 
 public class MemberMenu {
 	
@@ -24,11 +27,11 @@ public class MemberMenu {
 			switch((char)br.read()) 
 			{
 			case '1': mbdao.createMember(); break;
-			case '2': mbdao.deleteMember(); break;
-			case '3': mbdao.viewMember(); break;
-			case '4': mbdao.updateMember();; break;
-			case '5': mbdao.deleteMember(); break;
-			case '6': mbdao.findByNameMember(); break;
+			case '2': mbdao.listMember(); break;
+			case '3': mbdao.viewMember(1); break;
+			case '4': mbdao.updateMember(1);; break;
+			case '5': mbdao.deleteMember(1); break;
+			case '6': mbdao.findByNameMember(""); break;
 			case '7': mbdao.findByEmailMember(); break;
 			case '0': System.out.println("프로그램종료!!!"); System.exit(0);
 			}
@@ -75,19 +78,21 @@ public class MemberMenu {
 	}
 	
 	public void mainMemberMenu() {
+		
 		MemberDAOImpl mbdao=MemberFactory.getInstance();
 		
 		while(true) {
+			
 			int menuNo=mainJOptionPanMenu();
 			
 			switch(menuNo) {
 			
 			case 1: createMember(mbdao); break;
-			case 2: listMember();break;
-			case 3: viewMember(); break;
-			case 4: updateMemeber(); break;
-			case 5: deleteMember(); break;
-			case 6: findByName(); break;
+			case 2: listMember(mbdao);break;
+			case 3: viewMember(mbdao); break;
+			case 4: updateMemeber(mbdao); break;
+			case 5: deleteMember(mbdao); break;
+			case 6: findByName(mbdao); break;
 			case 7: findByEmail(); break;
 			case 0: System.out.println("프로그램종료!!!"); System.exit(0);
 			}
@@ -99,28 +104,74 @@ public class MemberMenu {
 		
 	}
 
-	private void findByName() {
-		// TODO Auto-generated method stub
+	private void findByName(MemberDAOImpl mbdao) {
+		
+		String member_name = JOptionPane.showInputDialog("검색할 회원의 이름을 입력하세요!!");
+		
+		if((member_name==null) || (member_name.equals(""))) {
+			return;
+		} else {
+			ArrayList<MemberVO> members = mbdao.findByNameMember(member_name);
+			
+			String memberList = "=".repeat(60) + "\n" 
+					  + "ID\t\tPW\t\t회원이름\t\t성별\t\t나이\t\t이메일"
+				      + "=".repeat(60) + "\n";
+
+			for(MemberVO member:members) {
+				memberList += member.toString() + "\n";
+			}
+				JOptionPane.showConfirmDialog(null, memberList);				
+		}
 		
 	}
 
-	private void deleteMember() {
-		// TODO Auto-generated method stub
+	private void deleteMember(MemberDAOImpl mbdao) {
+		String member_id=JOptionPane.showInputDialog("삭제할 회원의 ID를 입력하세요.");
+		if((member_id==null) || (member_id.equals(""))) {
+			return;
+		} else {
+			mbdao.deleteMember(Integer.parseInt(member_id));
+		}
 		
 	}
 
-	private void updateMemeber() {
-		// TODO Auto-generated method stub
-		
+	private void updateMemeber(MemberDAOImpl mbdao) {
+		String member_id=JOptionPane.showInputDialog("수정할 회원의 ID를 입력하세요.");
+		if((member_id==null) || (member_id.equals(""))) {
+			return;
+		} else {
+			mbdao.updateMember(Integer.parseInt(member_id));
+		}
 	}
 
-	private void viewMember() {
-		// TODO Auto-generated method stub
+	private void viewMember(MemberDAOImpl mbdao) {
+		String member_id=JOptionPane.showInputDialog("조회할 회원의 ID를 입력하세요.");
 		
+		if(member_id==null||member_id.equals("")) {
+			return;
+		}else {
+			MemberVO member=mbdao.viewMember(Integer.parseInt(member_id));
+			
+			JOptionPane.showConfirmDialog(null, "회원 ID: "+member.getMember_id()+"\n"
+											    +"회원 PW: "+member.getMember_pw()+"\n"
+											    +"회원 이름: "+member.getMember_name()+"\n"
+											   +"회원 성별: "+member.getMember_gender()+"\n"
+											   +"회원 나이:" +member.getMember_age()+"\n"
+											   +"회원 이메일:" +member.getMember_email()+"\n");
+		}	
 	}
 
-	private void listMember() {
-		// TODO Auto-generated method stub
+	private void listMember(MemberDAOImpl mbdao) {
+		ArrayList<MemberVO> members = mbdao.listMember();
+		
+		System.out.println("=".repeat(60));
+		System.out.println("회원ID\t\t회원PW\t\t회원이름\t\t회원성별\t\t회원나이\t\t회원이메일");
+		System.out.println("=".repeat(60));
+		
+		for(MemberVO member:members) {
+			System.out.println(member.toString());
+		}
+		System.out.println("----------- 게시글목록조회 종료 ----------");
 		
 	}
 
