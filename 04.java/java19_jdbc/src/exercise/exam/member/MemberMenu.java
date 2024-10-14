@@ -32,7 +32,7 @@ public class MemberMenu {
 			case '4': mbdao.updateMember(1);; break;
 			case '5': mbdao.deleteMember(1); break;
 			case '6': mbdao.findByNameMember(""); break;
-			case '7': mbdao.findByEmailMember(); break;
+			case '7': mbdao.findByEmailMember(""); break;
 			case '0': System.out.println("프로그램종료!!!"); System.exit(0);
 			}
 		}	
@@ -93,14 +93,30 @@ public class MemberMenu {
 			case 4: updateMemeber(mbdao); break;
 			case 5: deleteMember(mbdao); break;
 			case 6: findByName(mbdao); break;
-			case 7: findByEmail(); break;
+			case 7: findByEmail(mbdao); break;
 			case 0: System.out.println("프로그램종료!!!"); System.exit(0);
 			}
 		}
 	}
 
-	private void findByEmail() {
-		// TODO Auto-generated method stub
+	private void findByEmail(MemberDAOImpl mbdao) {
+		String member_email = JOptionPane.showInputDialog("검색할 회원의 이메일을 입력하세요!!");
+		
+		if((member_email==null) || (member_email.equals(""))) {
+			return;
+		} else {
+			ArrayList<MemberVO> members = mbdao.findByEmailMember(member_email);
+			
+			String memberList = "=".repeat(10)
+					  + "ID|\t\tPW|\t\t회원이름|\t\t성별|\t\t나이|\t\t이메일"
+				      + "=".repeat(10) + "\n";
+
+			for(MemberVO member:members) {
+				memberList += member.toString() + "\n";
+			}
+				JOptionPane.showConfirmDialog(null, memberList);				
+		}
+		
 		
 	}
 
@@ -113,9 +129,9 @@ public class MemberMenu {
 		} else {
 			ArrayList<MemberVO> members = mbdao.findByNameMember(member_name);
 			
-			String memberList = "=".repeat(60) + "\n" 
-					  + "ID\t\tPW\t\t회원이름\t\t성별\t\t나이\t\t이메일"
-				      + "=".repeat(60) + "\n";
+			String memberList = "=".repeat(10)
+					  + "ID|\t\tPW|\t\t회원이름|\t\t성별|\t\t나이|\t\t이메일"
+				      + "=".repeat(10) + "\n";
 
 			for(MemberVO member:members) {
 				memberList += member.toString() + "\n";

@@ -11,6 +11,6 @@ public interface MemberDAOService {
 	void deleteMember(int member_id);
 	
 	ArrayList<MemberVO> findByNameMember(String member_name);
-	ArrayList<MemberVO> findByEmailMember();
+	ArrayList<MemberVO> findByEmailMember(String member_email);
 
 }

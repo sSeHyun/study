@@ -267,9 +267,47 @@ public class MemberDAOImpl implements MemberDAOService {
 	}
 
 	@Override
-	public ArrayList<MemberVO> findByEmailMember() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<MemberVO> findByEmailMember(String member_email) {
+		
+		ArrayList<MemberVO> memberList = new ArrayList<MemberVO>();
+		
+		ConnectionFactory cf = new ConnectionFactory();
+		Connection conn = cf.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = cf.getSelect() 
+				+ " where member_email like '%" +member_email  + "%'"
+				+ " order by member_id desc";		
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				MemberVO member = new MemberVO();
+				member.setMember_id(rs.getInt("member_id"));
+				member.setMember_pw(rs.getString("member_pw"));
+				member.setMember_name(rs.getString("member_name"));
+				member.setMember_gender(rs.getString("member_gender"));
+				member.setMember_age(rs.getString("member_age"));
+				member.setMember_email(rs.getString("member_email"));
+				memberList.add(member);
+			}
+		
+		} catch (SQLException e) {
+			System.out.println("회원목록(by 이메일) 조회 실패!!!");
+			e.printStackTrace();
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e2) {
+				// dummy
+			}
+		}		
+	
+		return memberList;
 	}
 	
 	
