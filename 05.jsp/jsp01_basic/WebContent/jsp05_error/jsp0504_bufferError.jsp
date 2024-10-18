@@ -12,4 +12,4 @@
 	<% for(int i=0;i<=3;i++) { out.println("no = " + i + "<br>"); } %>
 	<%= 10/0 %>
 </body>
-</html> 
+</html>

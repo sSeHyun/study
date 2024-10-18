@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h1>redirect</h1>
-	<c:redirect url="http://google.com"/>
+	<c:redirect url="http://www.google.com"/>
 </body>
 </html>

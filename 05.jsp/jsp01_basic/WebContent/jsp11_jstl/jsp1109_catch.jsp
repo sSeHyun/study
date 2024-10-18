@@ -22,7 +22,7 @@
 	<hr />
 	
 	<c:if test="${ e != null }">
-		exception 발생했습니다!!<br>
+		익셉션이 발생했습니다!!<br>
 		${ e }
 	</c:if>
 </body>

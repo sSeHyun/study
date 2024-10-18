@@ -10,10 +10,10 @@
 <body>
 	<h1>Number Format Tag</h1>
 	<c:set var="price" value="10000"/>
-	<fmt:formatNumber value="${price}" type="number" var="numberType"/> <br />
-	통화 : <fmt:formatNumber value="${price}" type="currency" currencySymbol="원"/> <br />
-	퍼센트 : <fmt:formatNumber value="${price}" type="percent" groupingUsed="false"/> <br />
-	숫자 : ${ price } <br />
-	패턴 : <fmt:formatNumber value="${price}" pattern="#,##0.00"/> <br />
+	<fmt:formatNumber value="${ price }" type="number" var="numberType "/><br>
+	통화   : <fmt:formatNumber value="${ price }" type="currency" currencySymbol="$"/><br>
+	퍼센트 : <fmt:formatNumber  value="${ price }" type="percent" groupingUsed="false"/><br>
+	숫자   : ${ price }<br>
+	패턴   : <fmt:formatNumber value="${ price }" pattern="#,##0.00"/><br>
 </body>
 </html>

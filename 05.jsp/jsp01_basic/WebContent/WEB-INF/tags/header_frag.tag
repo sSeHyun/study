@@ -29,4 +29,4 @@
 		headerEndTag ="</h3>";				
 	}
 %>
-<%= headerStartTag %><jsp:invoke fragment="title" /><%= headerEndTag %> 
+<%= headerStartTag %><jsp:invoke fragment="title"/><%= headerEndTag %>

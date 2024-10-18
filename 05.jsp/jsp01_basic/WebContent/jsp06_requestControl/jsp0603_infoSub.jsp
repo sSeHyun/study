@@ -1,17 +1,16 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	String type=request.getParameter("type");
-	if(type==null) return;
-	
+	String type = request.getParameter("type");
+	if(type == null) return;
 %>
 <hr />
 <table width="100%" border="1" cellpadding="0" cellspacing="0">
 	<tr>
 		<td>제품타입</td>
-		<td><b><%=type %></b></td>
+		<td><b><%= type %></b></td>
 	</tr>
 	<tr>
-		<td>제품의 특징</td>
+		<td>제품등급</td>
 		<td>
 			<%
 				if(type.equalsIgnoreCase("A")) {

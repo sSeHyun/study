@@ -10,11 +10,10 @@
 <title></title>
 </head>
 <body>
-	<h1>Session에 회원정보를 저장/조회하기</h1>
-	Session에 로그인한 회원정보를 저장했습니다. <br />
+	<h1>Session에 회원정보를 저장/조회 하기</h1>
+	session에 로그인한 회원정보를 저장했습니다!!<br>
 	
-	회원ID: <%=session.getAttribute("id") %> <br />
-	회원명: <%=session.getAttribute("name") %> <br />
-	
+	회원ID : <%= session.getAttribute("id") %><br>
+	회원명 : <%= session.getAttribute("name") %><br>
 </body>
 </html>

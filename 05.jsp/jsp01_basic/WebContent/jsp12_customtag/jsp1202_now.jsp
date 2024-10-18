@@ -9,6 +9,6 @@
 <body>
 	<h1>Custom Tag</h1>
 	<h3>현재시간</h3>
-	오늘은 <b><tf:now/></b>
+	오늘은 <b><tf:now/> 입니다!</b>
 </body>
 </html>

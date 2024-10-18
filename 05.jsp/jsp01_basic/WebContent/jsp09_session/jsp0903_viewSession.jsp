@@ -6,9 +6,8 @@
 <title></title>
 </head>
 <body>
-	<h1>Session정보 조회</h1>	
-	회원ID: <%=session.getAttribute("id") %> <br />
-	회원명: <%=session.getAttribute("name") %> <br />
-
+	<h1>session정보 조회</h1>
+	회원ID : <%= session.getAttribute("id") %><br>
+	회원명 : <%= session.getAttribute("name") %>	
 </body>
 </html>

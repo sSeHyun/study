@@ -14,14 +14,14 @@
 			</tr>
 			<tr>
 				<td>이름</td>
-				<td><input type="text" name="name" size="10"> </td>
+				<td><input type="text" name="name" size="10"></td>
 				<td>이메일</td>
-				<td><input type="email" name="email" size="20"> </td>
+				<td><input type="email" name="email" size="20"></td>
 			</tr>
 			<tr>
 				<td colspan="4" align="center"><input type="submit" value="회원가입"/></td>
 			</tr>
-		</table>
+		</table>	
 	</form>
 </body>
 </html>

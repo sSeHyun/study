@@ -130,39 +130,25 @@
 <title></title>
 </head>
 <body>
-<% 
+<%
 	request.setAttribute("name", "홍길동");
 %>
-	<h1> request vs requestScope</h1>
-	1. JSP request의 name=<%=request.getAttribute("name") %> <br />
-	2. EL request의 name= ${requestScope.name} <br />
+</body>
+	<h1>request vs requestScope</h1>
+	1. JSP request의 name = <%= request.getAttribute("name") %><br>
+	2. EL request의 name = ${ requestScope.name }<br>
 	
 	<h1>request.getParameter vs param</h1>
-	<!-- http:/.../jsp1001_useELObject.jsp?id=hong -->
-	1. JSP request.getParameter("id")=<%=request.getParameter("id") %><br />
-	   JSP request.getParameter("name")=<%=request.getParameter("name") %><br />
-	
-	2. EL param.id= ${param.id} <br />
-	   EL param.name= ${param.name} <br />
-	
+	<!-- http:/..../jsp1001_useObject.jsp?id=hong&name=홍길동 -->
+	1. JSP의 request.getParameter("id") = <%= request.getParameter("id") %><br>
+	   JSP의 request.getParameter("name") = <%= request.getParameter("name") %><br>
+	2. EL의 param.id = ${ param.id }<br>
+	   EL의 param.name = ${ param.name }<br>
+	   
 	<h1>pageContext</h1>
 	1. JSP의 요청URI = <%= pageContext.getRequest().getServerName() %><br>
-	2. EL의 요청 URI=${pageContext.request.requestURI} <br />	
-</body>
+	2. EL의 요청URI = ${ pageContext.request.requestURI }<br>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

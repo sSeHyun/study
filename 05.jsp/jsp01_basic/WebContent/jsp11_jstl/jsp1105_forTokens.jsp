@@ -8,9 +8,9 @@
 </head>
 <body>
 	<h1>forTokens</h1>
-	컴마(,)와 점(.)을 구분자로 사용하기 <br />
-	<c:forTokens var="token" items="빨,주,노,초,파,남,보" delims=",.">
-		${token} <br />
+	컴마(,)와 점(.)을 구분자로 사용하기 <br>
+	<c:forTokens var="token" items="빨,주,노.초,파.남,보" delims=",.">
+		${ token } <br>
 	</c:forTokens>
 </body>
 </html>

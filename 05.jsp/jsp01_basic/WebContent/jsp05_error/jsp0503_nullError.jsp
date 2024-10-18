@@ -12,6 +12,6 @@
 	  	<location>/jsp05_error/error/nullPointerError.jsp</location>
 	  </error-page>		
 	-->
-	회원아이디 : <%=request.getParameter("id").toUpperCase() %>
+	회원아이디 : <%= request.getParameter("id").toUpperCase() %>
 </body>
 </html>

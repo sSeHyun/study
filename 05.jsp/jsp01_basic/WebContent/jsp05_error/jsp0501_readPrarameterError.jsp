@@ -6,23 +6,19 @@
 <title></title>
 </head>
 <body>
-	<h1>request파라미터 출력하기</h1>
+	<h1>request파라미터 확인하기</h1>
 	<% 
-		try{
+		try {
 	%>
-	<%= request.getParameter("userID").toUpperCase() %>
-			
-	<% 		
-		}catch(Exception e){
-			
-		%>
-		<b style="color: red">ID 파라미터가 전달되지 않았습니다.</b>
-		<%	
+			<%= request.getParameter("id").toUpperCase() %>			
+	<%
+		} catch(Exception e) {
+	%>
+			<b style="color: red;">id 파라미터가 전달되지 않았습니다!!</b>
+	<%
 			e.getMessage();
 		}
 	%>
-	
-	
-	
+
 </body>
 </html>

@@ -15,7 +15,7 @@
 		좋아하는 동물 : 
 			<input type="checkbox" name="pet" value="dog"/>강아지		
 			<input type="checkbox" name="pet" value="cat"/>고양이
-			<input type="checkbox" name="pet" value="pig"/>돼지
+			<input type="checkbox" name="pet" value="pig"/>도야지
 			<br />
 		<input type="submit" value="전송"/>
 	</form>

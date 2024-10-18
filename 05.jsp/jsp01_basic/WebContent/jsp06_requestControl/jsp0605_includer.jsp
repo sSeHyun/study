@@ -7,10 +7,11 @@
 </head>
 <body>
 	<%
-		int number=100;
+		int number = 100;
 	%>
-	<%@ include file="./jsp0605_includee.jspf" %> <hr />
-	includee.jspf에서 가져온 변수 값: <%= includee_value %>
-
+	<%@include file="./jsp0605_includee.jspf" %>
+	<hr />
+	
+	includee.jspf에서 가져온 변수 값 = <%= includee_value %>
 </body>
 </html>

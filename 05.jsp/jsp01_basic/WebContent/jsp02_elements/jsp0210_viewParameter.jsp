@@ -1,7 +1,6 @@
 <%@page import="java.util.Map"%>
 <%@page import="java.util.Enumeration"%>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <%
 	// get방식은 한글정상출력, post방식은 한글 깨짐
 	// 한글이 깨지기 때문에 문자셋을 인코딩을 해야 한다.
@@ -72,20 +71,22 @@
 	%>
 	
 	<b>4.request.getParameterMap() 사용</b><br>
-	
+	<!-- 
+		name=홍길동
+		age=100
+		addr=조선한양
+		pets={dog, cat, pig} 
+	-->
 	<%
-		Map map=request.getParameterMap();
-		String[] paramValue = (String[]) map.get("pet");
-		if(paramValue!=null){
-		
+	    Map<String, String[]> map = request.getParameterMap();
+		String[] paramValue = (String[]) map.get("pets");
+		if(paramValue != null) {
 	%>
-			파라미터 값의 크기 : <%= paramValue.length %>
-			파라미터의 값: <%= paramValue[0] %>
-	<% } %>
-		
-	
+			파라미터값의크기 : <%= paramValue.length %><br> 
+			파라미터의 값: <%= paramValue[0] %> 
+	<%
+		}
 	%>
-	
 </body>
 </html>
 

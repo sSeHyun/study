@@ -27,9 +27,7 @@
 	     //~~.jsp?id=hong&age=20     
 	-->
 	아이디 : <%= request.getParameter("id") %> = ${ param.id }<br>
-	아이디 : ${ param.id }<br>
 	나이   : <%= request.getParameter("age") %> = ${ param.age }<br>
-	나이   : ${ param.age }<br>
 	
 	<hr />
 	<c:if test="${ param.id == 'hong' }">

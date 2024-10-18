@@ -22,9 +22,8 @@
 		해야 한다.
 		
 		또한, exception타입별로 에러페이지를 정의할 수 있다.
-		예를 들어서 java.lang.NullPointerException이 발생할 경우 
-		포워딩될 페이지를 설정할 수있다.
-		
+		예를 둘어서 java.lang.NullPointerException이 발생할 경우
+		포워딩될 페이지를 설정할 수 있다.
 	-->
 	<h1 style="color: red;">요청한 페이지를 찾지 못했습니다!!</h1>
 	<strong style="color: orange;">정확한 주소를 다시 입력하세요!!!</strong>

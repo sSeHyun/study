@@ -1,16 +1,16 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!--  
-   request(HttpServletRequest)기본객체
-   
-   request기본객체는 JSP페이지에서 가장 많이 사용되는 기본 객체로서 웹 브라우저의 요청과
-   관련이 있다. 웹브라우저에 웹사이트의 주소를 입력하면, 웹브라우저는 해당 웹서버에 연결
-   한 후 요청정보를 전송하는데 이 요청정보를 제공하는 것이 request기본객체이다.
-   
-   request기본객체가 제공하는 기능은
-   
-   1. 클라이언트(웹브라우저)와 관련된 정보
-   2. 서버와 관련된 정보
-   3. 클라이언트가 전송한 요청파라미터 정보
+	request(HttpServletRequest)기본객체
+	
+	request기본객체는 JSP페이지에서 가장 많이 사용되는 기본 객체로서 웹 브라우저의 요청과
+	관련이 있다. 웹브라우저에 웹사이트의 주소를 입력하면, 웹브라우저는 해당 웹서버에 연결
+	한 후 요청정보를 전송하는데 이 요청정보를 제공하는 것이 request기본객체이다.
+	
+	request기본객체가 제공하는 기능은
+	
+	1. 클라이언트(웹브라우저)와 관련된 정보
+	2. 서버와 관련된 정보
+	3. 클라이언트가 전송한 요청파라미터 정보
     4. 클라이언트가 전송한 요청헤더 정보
     5. 클라이언트가 전송한 쿠키 정보
     6. 속성처리
@@ -45,9 +45,7 @@
     3. getHeaderName() : 모든 헤더의 이름을 리턴
     4. getIntHeader(String name) : 지정한 헤더의 값을 정수값으로 리턴
     5. getDateHeader(String name) : 지정한 헤더의 값을 시간 값으로 리턴
-      
 -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,7 +54,7 @@
 </head>
 <body>
 	<%= request.toString() %>
-	<h3>request기본객체의 메서드</h3>
+	<h3>requset기본객체의 메서드</h3>
 	
 	1. getRmoteAddr() : <%= request.getRemoteAddr() %><br>
     2. getContentLength() : <%= request.getContentLength() %><br>
@@ -68,18 +66,16 @@
     8. getContextPath() : <%= request.getContextPath() %><br>
     9. getServerName() : <%= request.getServerName() %><br>
    10. getServerPort() : <%= request.getServerPort() %><br>
-   	<hr />
+	<hr />
 	
-       1. getParameter(String name) : <%= request.getParameter("name") %><br>
+	<h3>request기본객체의 요청파라미터관련 메서드</h3>
+	
+    1. getParameter(String name) : <%= request.getParameter("name") %><br>
        <%= request.getParameter("age") %><br>
        <%= request.getParameter("addr") %><br>
-    	2. getParameterValues(String name) : 이름(name)인 모든 파라미터의 값을 배열로 리턴
-    	3. getParmeterNames() : 웹브라우저가 전송한 파라미터의 이름 목록정보를 리턴
-    	4. getParameterMap() : 웹브라우저가 전송한 파라미터의 맵을 리턴	
-   
-   
-	
-	
-	
+    <hr />
+    2. getParameterValues(String name) : <%= request.getParameterValues("hobby") %><br>
+    3. getParameterNames() : <%= request.getParameterNames() %><br>
+    4. getParameterMap() : <%= request.getParameterMap() %><br>
 </body>
 </html>

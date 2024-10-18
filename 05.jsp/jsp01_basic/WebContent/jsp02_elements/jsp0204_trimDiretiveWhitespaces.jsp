@@ -7,6 +7,6 @@
 <title></title>
 </head>
 <body>
-	현재시간: <%= new java.util.Date()%> <br>
+현재시간 : <%= new java.util.Date() %>
 </body>
 </html>
