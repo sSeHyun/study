@@ -1,6 +1,7 @@
 package com.lec.model;
 
 public class ContentDTO {
+	
 	private int bno;
 	private String subject;
 	private String writer;
@@ -34,6 +35,9 @@ public class ContentDTO {
 	@Override
 	public String toString() {
 		return "ContentDTO [bno=" + bno + ", subject=" + subject + ", writer=" + writer + ", content=" + content + "]";
+	}
+	public boolean matchWriter(String writer) {
+		return writer!=null && writer.equals(writer);
 	}
 	
 	

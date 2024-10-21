@@ -1,3 +1,4 @@
+<%@page import="com.lec.model.ListMessageDTO"%>
 <%@page import="com.lec.service.GetMessageListService"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.lec.model.MessageDTO"%>
@@ -5,11 +6,15 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
+	String pageNumberStr = request.getParameter("page");
+	int pageNumer = 1;
+	if(pageNumberStr !=null) pageNumer = Integer.parseInt(pageNumberStr);
 
 	GetMessageListService instance = GetMessageListService.getIntance();
-	List<MessageDTO> listMessage = instance.getMessageList();
-	request.setAttribute("listMessage", listMessage);
+	ListMessageDTO listMessageDto = instance.getMessageList(pageNumer);
 %>
+<c:set var="listMessageDto" value="<%= listMessageDto %>" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,11 +22,12 @@
 <title></title>
 </head>
 <body>
-	<h1>실습. 게시판</h1>
-	bno(auto) , subject, writer, content, readcnt,crtdate
-	list, insert,delete
 	
-	
+	<h1>실습. 게시판 </h1>
+	bno(auto), subject, writer, content, readcnt, crtdate
+	list, insert, delete
+	<hr />
+		
 	<form action="insertMessage.jsp" method="post">
 		<table border="1">
 			<tr>
@@ -45,12 +51,12 @@
 	</form>
 	<hr />
 	
-	<c:if test="${ listMessage.isEmpty() }">
+	<c:if test="${ listMessageDto.isEmpty() }">
 		<h3 style="color: red;">등록된 메시지가 없습니다!!!</h3>
 	</c:if> <!-- request.getAttribute("listMessage") -->
 	
 	
-	<c:if test="${ !listMessage.isEmpty() }">
+	<c:if test="${ !listMessageDto.isEmpty() }">
 		<table border="1">
 			<tr>
 				<th>번호</th>
@@ -58,15 +64,20 @@
 				<th>내용</th>
 				<th>삭제</th>
 			</tr>
-			<c:forEach var="message" items="${ listMessage }">
+			<c:forEach var="message" items="${ listMessageDto.getListMessage() }">
 				<tr>
-					<td>${ message.getId() }</td>
+					<td><a href="updateMessage.jsp?id=${ message.getId() }">${ message.getId() }</a></td>
 					<td>${ message.getGuest_name() }</td>
-					<td><textarea rows="5" cols="60" disabled>${ message.getMessage() }</textarea></td>
+					<td><textarea rows="5" cols="50" disabled>${ message.getMessage() }</textarea></td>
 					<td><a href="deleteMessage.jsp?id=${ message.getId()}">[삭제]</a></td>
 				</tr>	
 			</c:forEach>		
 		</table>
+		
+		<c:forEach var="pageNum" begin="1" end="${ listMessageDto.pageTotalCount }">
+			<a href="listMessage.jsp?page=${pageNum}">[${pageNum}] </a>
+		</c:forEach>
+		
 	</c:if>
 </body>
 </html>

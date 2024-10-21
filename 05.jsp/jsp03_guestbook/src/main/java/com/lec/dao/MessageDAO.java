@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -48,7 +49,7 @@ public class MessageDAO {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, firstRow);
-			pstmt.setInt(2, endRow);	
+			pstmt.setInt(2, endRow - firstRow);	
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				List<MessageDTO> listMessage = new ArrayList<>();
@@ -68,25 +69,82 @@ public class MessageDAO {
 	public MessageDTO makeMessage(ResultSet rs) throws SQLException {
 		MessageDTO message = new MessageDTO();
 		message.setId(rs.getInt("id"));
-		message.setGuest_name(rs.getString("guest_name"));    
+		message.setGuest_name(rs.getString("guest_name"));
 		message.setPassword(rs.getString("password"));
 		message.setMessage(rs.getString("message"));
 		return message;
 	}
 
-	public int delete(Connection conn,int id) throws Exception {
+	public MessageDTO select(Connection conn, int id) throws SQLException {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from message where id = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) return makeMessage(rs);
+			else return null;
+ 		} finally {
+			JDBCUtility.close(null, pstmt, rs);
+		}		
+	}	
+	
+	public int delete(Connection conn, int id) throws SQLException {
 		PreparedStatement pstmt = null;
 		String sql = "delete from message where id = ?";
-		
 		try {
-			pstmt=conn.prepareStatement(sql);
-			pstmt.setInt(1,id);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, id);
 			return pstmt.executeUpdate();
 		} finally {
-			JDBCUtility.close(conn, pstmt, null);
+			JDBCUtility.close(null, pstmt, null);
 		}
-		
 	}
-	public void select(Connection conn, int messageId) {}
-	public void update() {}
+
+	public int update(Connection conn, int id, String msg) throws SQLException {
+		PreparedStatement pstmt = null;
+		String sql = "update message set message=? where id = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, msg);
+			pstmt.setInt(2, id);
+			return pstmt.executeUpdate();
+		} finally {
+			JDBCUtility.close(null, pstmt, null);
+		}
+	}
+
+	public int selectCount(Connection conn) throws SQLException {
+		Statement stmt = null;
+		ResultSet rs = null;
+		String sql = "select count(*) from message";
+		
+		try {
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			rs.next();
+			return rs.getInt(1);
+		} finally {
+			JDBCUtility.close(null, stmt, rs);
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

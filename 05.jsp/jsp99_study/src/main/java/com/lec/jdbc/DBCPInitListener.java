@@ -49,7 +49,7 @@ public class DBCPInitListener implements ServletContextListener {
 			
 			Class.forName("org.apache.commons.dbcp2.PoolingDriver");
 			PoolingDriver driver = (PoolingDriver) DriverManager.getDriver("jdbc:apache:commons:dbcp:");
-			driver.registerPool("guestbook", connPool);		
+			driver.registerPool("boardex", connPool);		
 		} catch (Exception e) {
 			throw new RuntimeException("DB환경설정파일 로딩 실패!!");
 		}		
