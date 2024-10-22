@@ -1,5 +1,16 @@
+<%@page import="com.lec.model.ListContentDTO"%>
+<%@page import="com.lec.service.GetContentListService"%>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+	String pageNumberStr=request.getParameter("page");
+	int pageNumber=1;
+	if(pageNumberStr!=null)pageNumber=Integer.parseInt(pageNumberStr);
+	
+	GetContentListService instance =GetContentListService.getInstance();
+	ListContentDTO listContentDto=instance.getContentList(pageNumber);
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,8 +49,14 @@
 			<th>날짜</th>
 			<th>삭제</th>
 		</tr>
-		<c:forEach var="content" items="${ }">
-		</c:forEach>
+		
+		<c:foreach var="content" items="${listContentDto.getListContent()}">
+		<tr>
+			<td><a href="updateContent.jsp? "></a></td>
+		</tr>
+		
+		
+		</c:foreach>
 		
 		
 
