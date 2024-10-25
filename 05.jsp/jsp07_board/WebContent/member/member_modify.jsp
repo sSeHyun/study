@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h3>회원정보수정</h3>
 
 </body>
 </html>

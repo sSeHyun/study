@@ -32,18 +32,19 @@ public class MemberDAO {
 		
 	public int insert(MemberVO member) {
 		
+		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "insert into member(id, pw, name, age, gender,email) "
-				
+		String sql = "insert into member(id, pw, name, age, gender, email) "
 				   + " values(?,?,?,?,?,?)";
+		
 		
 		int insertCount = 0;
 		
 		try {
-			pstmt = conn.prepareStatement("select max(bno) from board");
-			rs = pstmt.executeQuery();
-	
+			
+			//중복에러 체크	로직 추가하기
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, member.getId());
 			pstmt.setString(2, member.getPw());
@@ -54,7 +55,7 @@ public class MemberDAO {
 			
 			insertCount = pstmt.executeUpdate();
 		} catch (Exception e) {
-			System.out.println("회원 등록실패!!!");
+			System.out.println("회원 등록실패!! !" + e.getMessage());
 		} finally {
 			JDBCUtility.close(null, pstmt, rs);
 		}
@@ -110,7 +111,7 @@ public class MemberDAO {
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from board where id = ?";
+		String sql = "select * from member where id = ?";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -132,16 +133,59 @@ public class MemberDAO {
 		
 		return member;
 	}
+	//회원ID 확인하기
+	public boolean isMemberId(String id, String pass) {
+		
+		boolean isId=false;
+		
+		MemberVO member = new MemberVO();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		String sql="select * from member where id=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1,id);
+			rs=pstmt.executeQuery();
+			rs.next();
+			if(pass.equals(rs.getString("pass"))) isId=true;
+		}catch (Exception e) {
+			System.out.println("회원조회실패!"+e.getMessage());
+		}finally {
+			JDBCUtility.close(null, pstmt, rs);
+		}
+		
+		return isId;
+	}
 
-
-
-
-	
-	
-	
-	
-	
 	//4. 회원정보 수정하기
+	public int updateMember(MemberVO member) {
+		int updateCount=0;
+		
+		PreparedStatement pstmt=null;
+		String sql="update member set pw = ?, name = ?, age = ? , email = ? "
+				   + " where id = ?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1,member.getPw());
+			pstmt.setString(2,member.getName());
+			pstmt.setInt(3,member.getAge());
+			pstmt.setString(4,member.getEmail());
+			updateCount=pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("회원정보 수정 실패!"+e.getMessage());
+		}finally {
+			JDBCUtility.close(null, pstmt, null);
+		}
+		return updateCount;
+	}
+
+
+
+
+
 	//5. 회원삭제하기
 
 }

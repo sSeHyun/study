@@ -8,7 +8,8 @@ import com.lec.member.vo.ActionForward;
 public class MemberDeleteFormAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) {
-		// TODO Auto-generated method stub
+		int p= Integer.parseInt(req.getParameter("p"));
+		
 		return null;
 	}
 }

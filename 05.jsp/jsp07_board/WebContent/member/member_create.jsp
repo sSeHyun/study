@@ -20,8 +20,7 @@
 			<p>게시판글쓰기 페이지 입니다!! 글을 작성해 주세요!!</p>
 		</div>	
 		
-		<form action="memberCreate.mb" method="post" 
-			name="memberForm" enctype="multipart/form-data">
+		<form action="memberCreate.mb" method="post"  name="memberForm">
 			
 			<div class="form-group input-group">
 				<div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-user"></i></span></div>

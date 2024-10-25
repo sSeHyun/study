@@ -24,8 +24,9 @@ public class MemberDetailService {
 		MemberDAO memberDAO =MemberDAO.getInstance();
 		memberDAO.setConnection(conn);
 		
-
-		//member = MemberDAO.selectMember(id);
+		JDBCUtility.commit(conn); 
+		member = memberDAO.selectMember(id);
+		
 		return member;
 	}
 

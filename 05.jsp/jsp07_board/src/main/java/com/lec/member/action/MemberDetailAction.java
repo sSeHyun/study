@@ -13,13 +13,15 @@ public class MemberDetailAction implements Action {
 		
 		int p=Integer.parseInt(req.getParameter("p"));
 		String id=req.getParameter("id");
-		
+
 		MemberDetailService memberDetailService = MemberDetailService.getInstance();
-		MemberVO member = memberDetailService.getMember("id");
+		MemberVO member = memberDetailService.getMember(id);
 		
 		ActionForward forward=new ActionForward();
+		req.setAttribute("member", member);	
 		forward.setPath(String.format("/member/member_datail.jsp?p=%d&id=%s", p,id));
 		
+		System.out.println(String.format("/member/member_datail.jsp?p=%d&id=%s", p,id));
 		
 		return forward;
 	}

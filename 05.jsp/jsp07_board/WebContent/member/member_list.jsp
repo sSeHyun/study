@@ -54,7 +54,9 @@
 			<tbody>
 			<c:forEach var="member" items="${ memberList }">
 				<tr>
-					<td align="center">${ member.getId() }</td>
+					<td align="center">
+					<a href="memberDetail.mb?p=${ param.p }&id=${ member.getId() }">${ member.getId() }</a>
+					</td>	
 					<td align="center">${ member.getPw() }</td>
 					<td align="center">${ member.getName() }</td>										
 					<td align="center">${ member.getAge() }</td>
