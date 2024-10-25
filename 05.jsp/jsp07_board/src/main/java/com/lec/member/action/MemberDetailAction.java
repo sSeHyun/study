@@ -19,9 +19,8 @@ public class MemberDetailAction implements Action {
 		
 		ActionForward forward=new ActionForward();
 		req.setAttribute("member", member);	
-		forward.setPath(String.format("/member/member_datail.jsp?p=%d&id=%s", p,id));
 		
-		System.out.println(String.format("/member/member_datail.jsp?p=%d&id=%s", p,id));
+		forward.setPath(String.format("/member/member_detail.jsp?p=%d&id=%s", p,id));
 		
 		return forward;
 	}

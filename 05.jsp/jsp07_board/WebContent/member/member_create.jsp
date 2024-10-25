@@ -17,7 +17,7 @@
 	<div class="container" align="center">
 		<div class="jumbotron">
 			<h3>회원 생성</h3>
-			<p>게시판글쓰기 페이지 입니다!! 글을 작성해 주세요!!</p>
+			<p>회원정보 생성 페이지 입니다!! 회원정보를 작성해 주세요!!</p>
 		</div>	
 		
 		<form action="memberCreate.mb" method="post"  name="memberForm">
