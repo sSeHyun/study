@@ -12,7 +12,7 @@
 	<center>
 		<h1>답변형게시판</h1>
 		<a class="btn btn-success" href="boardList.do">게시판목록조회</a>
-		<a class="btn btn-primary" href="boardWriteForm.do">게시판글쓰기</a>
+		<a class="btn btn-primary" href="memberList.mb">회원목록조회</a>
 	</center>
 </body>
 </html>
