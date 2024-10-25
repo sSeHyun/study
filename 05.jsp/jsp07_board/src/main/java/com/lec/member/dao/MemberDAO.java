@@ -141,14 +141,14 @@ public class MemberDAO {
 		MemberVO member = new MemberVO();
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
-		String sql="select * from member where id=?";
+		String sql="select * from member where id = ?";
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1,id);
 			rs=pstmt.executeQuery();
 			rs.next();
-			if(pass.equals(rs.getString("pass"))) isId=true;
+			if(pass.equals(rs.getString(id))) isId=true;
 		}catch (Exception e) {
 			System.out.println("회원조회실패!"+e.getMessage());
 		}finally {

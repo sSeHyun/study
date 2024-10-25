@@ -19,13 +19,13 @@
 			<p>회원정보를 수정하는 서비스입니다!!!</p>
 		</div>
 		
-		<form action="memberModify.do" method="post" name="memberForm" >
+		<form action="memberModify.mb" method="post" name="memberForm" >
 			<input type="hidden" name="p" value="${ param.p }"/>
 			<input type="hidden" name="id" value="${ member.getId() }"/>
 			
 		<div class="form-group input-group">
 			<div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-user"></i></span></div>
-			<input type="text" class="form-control" name="id" id="id" value="${ member.getId() }" readonly/>
+			<input type="text" class="form-control" name="id" id="id" value="${ member.getId() }" readonly />
 		</div>	
 				
 			<div class="form-group input-group">
@@ -41,12 +41,17 @@
 				<div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-clipboard"></i></span></div>
 				<input type="text" class="form-control" name="age" id="age" value="${ member.getAge() }"/>
 			</div>
-			
-			
-			
-				
+			<div class="form-group input-group">
+				<div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-clipboard"></i></span></div>
+				<input type="text" class="form-control" name="gender" id="gender" value="${ member.getGender() }"/>
+			</div>
+			<div class="form-group input-group">
+				<div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-clipboard"></i></span></div>
+				<input type="text" class="form-control" name="email" id="email" value="${ member.getEmail() }"/>
+			</div>
+
 				<div class="form-group input-group mt-md-5 justify-content-center">
-					<input type="submit" class="btn btn-success float-right login-btn" value="게시글수정"/>
+					<input type="submit" class="btn btn-success float-right login-btn" value="회원정보수정"/>
 					<input type="reset" class="btn btn-success float-right login-btn ml-sm-2" value="새로고침"/>
 					<a href="javascript:history.go(-1)" class="btn btn-success ml-sm-2 float-right">이전</a>
 				</div>				

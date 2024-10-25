@@ -34,7 +34,6 @@ public class MemberModifyService {
 		Connection conn =JDBCUtility.getConnection();
 		MemberDAO memberDAO=MemberDAO.getInstance();
 		memberDAO.setConnection(conn);
-		
 		int updateCount=memberDAO.updateMember(member);
 		
 		if(updateCount>0) {
