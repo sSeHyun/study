@@ -50,8 +50,8 @@
 		<br />
 		
 		<div class="form-group input-group">
-			<a href="memberModifyForm.mb?p=${ param.p }&bno=${ member.getId() }" class="btn btn-success mr-sm-3 login-btn">수정</a>
-			<a href="memberDeleteForm.mb?p=${ param.p }&bno=${ member.getId() }" class="btn btn-success mr-sm-3 login-btn">삭제</a>
+			<a href="memberModifyForm.mb?p=${ param.p }&id=${ member.getId() }" class="btn btn-success mr-sm-3 login-btn">수정</a>
+			<a href="memberDeleteForm.mb?p=${ param.p }&id=${ member.getId() }" class="btn btn-success mr-sm-3 login-btn">삭제</a>
 			<a href="memberList.mb?p=${ param.p }" class="btn btn-success mr-sm-3 login-btn">회원목록</a>
 		</div>
 	</div>

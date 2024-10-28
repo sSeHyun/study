@@ -16,14 +16,14 @@ public class MemberModifyService {
 		return memberModifyService;
 	}
 	
-	public boolean isMemberId(String id,String pass) {
+	public boolean isMemberId(String id,String pw) {
 		
 		boolean isId=false;
 		
 		Connection conn=JDBCUtility.getConnection();
 		MemberDAO memberDAO = MemberDAO.getInstance();
 		memberDAO.setConnection(conn);
-		isId=memberDAO.isMemberId(id,pass);
+		isId=memberDAO.isMemberId(id,pw);
 
 		return isId;
 	}

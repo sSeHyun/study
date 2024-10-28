@@ -134,7 +134,7 @@ public class MemberDAO {
 		return member;
 	}
 	//회원ID 확인하기
-	public boolean isMemberId(String id, String pass) {
+	public boolean isMemberId(String id, String pw) {
 		
 		boolean isId=false;
 		
@@ -148,7 +148,7 @@ public class MemberDAO {
 			pstmt.setString(1,id);
 			rs=pstmt.executeQuery();
 			rs.next();
-			if(pass.equals(rs.getString(id))) isId=true;
+			if(pw.equals(rs.getString("pw"))) isId=true;
 		}catch (Exception e) {
 			System.out.println("회원조회실패!"+e.getMessage());
 		}finally {
@@ -163,7 +163,7 @@ public class MemberDAO {
 		int updateCount=0;
 		
 		PreparedStatement pstmt=null;
-		String sql="update member set pw = ?, name = ?, age = ? , email = ? "
+		String sql="update member set pw = ?, name = ?, age = ? , gender = ? ,email = ? "
 				   + " where id = ?";
 		
 		try {
@@ -171,7 +171,9 @@ public class MemberDAO {
 			pstmt.setString(1,member.getPw());
 			pstmt.setString(2,member.getName());
 			pstmt.setInt(3,member.getAge());
-			pstmt.setString(4,member.getEmail());
+			pstmt.setString(4,member.getGender());
+			pstmt.setString(5,member.getEmail());
+			pstmt.setString(6,member.getId());
 			updateCount=pstmt.executeUpdate();
 			
 		} catch (Exception e) {
@@ -182,10 +184,31 @@ public class MemberDAO {
 		return updateCount;
 	}
 
-
-
-
-
 	//5. 회원삭제하기
+	public int deleteMember(String id) {
+		int deleteCount=0;
+		
+		PreparedStatement pstmt = null;
+		String sql ="delete from member where id = ? ";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			deleteCount=pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("회원정보 삭제 실패!"+e.getMessage());
+		}finally {
+			JDBCUtility.close(null, pstmt, null);
+		}
+		
+		return deleteCount;
+	}
+
+
+
+
+
+
+
 
 }

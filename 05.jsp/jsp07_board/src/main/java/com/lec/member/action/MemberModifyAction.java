@@ -29,11 +29,11 @@ public class MemberModifyAction implements Action{
 
 			int p = Integer.parseInt(req.getParameter("p"));
 			String id = req.getParameter("id");
-			String pass = req.getParameter("pass");
+			String pw = req.getParameter("pw");
 			
 			member = new MemberVO();
 			MemberModifyService memberModifyService = MemberModifyService.getInstance();
-			isID = memberModifyService.isMemberId(id, pass);
+			isID = memberModifyService.isMemberId(id, pw);
 			String msg = "";
 		
 			if(isID) {
@@ -62,7 +62,7 @@ public class MemberModifyAction implements Action{
 					forward.setPath("error.mb?msg=" + URLEncoder.encode(msg, "utf-8"));
 				}
 			} else {
-				msg = "회원정보를 수정할 권한이 없습니다!\n 아이디를 확인하세요!!";
+				msg = "회원정보를 수정할 권한이 없습니다!\n 비밀번호를 확인하세요!!";
 				res.setContentType("text/html; charset=utf-8");
 				PrintWriter out = res.getWriter();
 				out.println("<script>");

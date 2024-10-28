@@ -1,5 +1,7 @@
 package com.lec.member.vo;
 
+import java.util.Objects;
+
 public class MemberVO {
 	
 	private String id;
@@ -52,6 +54,18 @@ public class MemberVO {
 				+ ", email=" + email + "]";
 	}
 	
+	public boolean equals(Object obj) {
+		if(this==obj)return true;
+		if(obj==null) return false;
+		if(getClass()!=obj.getClass())return false;
+		MemberVO other = (MemberVO) obj;
+		return id==other.id && 
+				pw==other.pw && 
+				name==other.name && 
+				age == other.age && 
+				gender == other.gender && 
+				email==other.email;
+	}
 	
 	
 	
