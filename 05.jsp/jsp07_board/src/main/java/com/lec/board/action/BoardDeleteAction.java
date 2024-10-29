@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.lec.board.service.BoardDeleteService;
 import com.lec.board.vo.ActionForward;
+import com.lec.board.action.Action;
 
 public class BoardDeleteAction implements Action {
 
