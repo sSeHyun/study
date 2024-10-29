@@ -3,8 +3,11 @@ package com.lec.customer.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.sql.DataSource;
+
 
 import com.lec.customer.vo.CustomerVO;
 import com.lec.db.JDBCUtility;
@@ -56,6 +59,75 @@ public class CustomerDAO {
 			JDBCUtility.close(null, pstmt, rs);
 		}
 		return insertCount;
+	}
+
+	//2. 회원 수 구하기 
+	public int selectListCount(String f, String q) {
+		
+		int listCount=0;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		String sql = "select count(*) from customer "
+				   + " where " + f + " like ? ";	
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "%" + q + "%");
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) listCount = rs.getInt(1);
+		} catch (Exception e) {
+			System.out.println("가입 회원 수 조회실패!!! " + e.getMessage());
+		} finally {
+			JDBCUtility.close(conn, pstmt, rs);
+		}
+		
+		return listCount;
+	}
+	
+	//회원 목록 조회하기
+
+	public List<CustomerVO> selectCustomerList(int p, int l, String f, String q) {
+		
+		CustomerVO customer = null;
+		List<CustomerVO> customerList = new ArrayList<>();
+		
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		String sql = "select * from customer "
+				   + " where " + f + " like ?"
+				   + " limit ?, " + l;
+		
+		int startRow = (p-1) * l;
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, "%" + q + "%");
+			pstmt.setInt(2, startRow);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				customer = new CustomerVO();
+				customer.setId(rs.getString("customer_id"));
+				customer.setPw(rs.getString("customer_pw"));
+				customer.setName(rs.getString("customer_name"));
+				customer.setJumin(rs.getString("customer_jumin"));
+				customer.setPhone(rs.getString("customer_phone"));
+				customer.setAddr(rs.getString("customer_addr"));
+				customer.setEmail(rs.getString("customer_email"));
+			
+				
+				customerList.add(customer);
+			}
+		} catch (Exception e) {
+			System.out.println("회원목록조회실패!!! " + e.getMessage());
+		} finally {
+			JDBCUtility.close(null, pstmt, rs);
+		}
+		return customerList;	
+		
+		
+	
 	}
 
 }

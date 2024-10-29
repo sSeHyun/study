@@ -28,13 +28,15 @@ public class CustomerCreateAction implements Action {
 			customer.setJumin(req.getParameter("customer_jumin"));
 			customer.setPhone(req.getParameter("customer_phone"));
 			customer.setAddr(req.getParameter("customer_addr"));
-			customer.setEmail(req.getParameter("customer_email"));
-			
+			customer.setEmail(req.getParameter("customer_email"));	
+	
 			CustomerCreateService customercreateService = CustomerCreateService.getInstance();
 			boolean isIdSuccess = customercreateService.registerCustomer(customer);
 			
 			if(isIdSuccess) {
 				forward =new ActionForward();
+		
+				
 				System.out.println("id parameter: " + req.getParameter("customer_id"));
 				System.out.println("pw parameter: " + req.getParameter("customer_pw"));
 				System.out.println("name parameter: " + req.getParameter("customer_name"));
