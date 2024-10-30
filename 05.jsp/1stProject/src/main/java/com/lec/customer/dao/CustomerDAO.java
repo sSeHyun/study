@@ -146,8 +146,10 @@ public class CustomerDAO {
 			pstmt.setString(2, customer_pw);
 			rs = pstmt.executeQuery();
 			rs.next();
+			
 			if(customer_id.equals(rs.getString("customer_id")) &&
 			   customer_pw.equals(rs.getString("customer_pw"))) isCustomer=true;
+			
 			
 		}catch (Exception e) {
 			System.out.println("CustomerDAO_로그인 실패!"+ e.getMessage());

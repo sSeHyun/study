@@ -34,8 +34,7 @@ crossorigin="anonymous">
         <div class="form-group input-group mt-md-5 justify-content-center">
 			<input type="submit" class="btn btn-success float-right login-btn" value="로그인"/>
 			<input type="reset" class="btn btn-success float-right login-btn ml-sm-2" value="새로고침"/>
-		</div>	
-			
+		</div>			
     </form>
 </body>
 </html>

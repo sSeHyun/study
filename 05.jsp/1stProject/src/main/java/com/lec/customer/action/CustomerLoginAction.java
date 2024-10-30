@@ -6,6 +6,7 @@ import java.net.URLEncoder;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.lec.customer.service.CustomerCreateService;
 import com.lec.customer.service.CustomerLoginService;
@@ -40,9 +41,14 @@ public class CustomerLoginAction implements Action {
 				customer.setId(customer_id);
 				customer.setPw(customer_pw);
 				
+				HttpSession session = req.getSession();
+				session.setAttribute("customer_id",req.getParameter("customer_id"));
+				session.setAttribute("customer_pw",req.getParameter("customer_pw"));
+					
 				forward =new ActionForward();
 				forward.setRedirect(true);
 				forward.setPath("customerList.cs");	//이후 main.cs로 수정해야함.
+						
 				
 			}else {
 				msg = "아이디 / 비밀번호를 확인하세요!!";

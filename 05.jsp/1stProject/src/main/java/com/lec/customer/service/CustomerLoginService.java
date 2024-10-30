@@ -25,8 +25,7 @@ public class CustomerLoginService {
 		isCustomer = customerDAO.isRightCustomer(customer_id, customer_pw);
 		
 		
-		System.out.println("isCustomer_"+customer_id);
-		System.out.println("isCustomer_"+customer_pw);
+		
 		
 		return isCustomer;
 	}

@@ -13,6 +13,7 @@ import com.lec.customer.action.Action;
 import com.lec.customer.action.CustomerCreateAction;
 import com.lec.customer.action.CustomerListAction;
 import com.lec.customer.action.CustomerLoginAction;
+import com.lec.customer.action.CustomerLogoutAction;
 import com.lec.customer.vo.ActionForward;
 
 
@@ -58,10 +59,13 @@ public class CustomerController extends HttpServlet {
 		} else if(command.equalsIgnoreCase("customerLogin")) {
 			action = new CustomerLoginAction();
 			forward = action.execute(req, res);
+		} else if(command.equalsIgnoreCase("customerLogout")) {
+			action = new CustomerLogoutAction();
+			forward = action.execute(req, res);
 		} else if(command.equalsIgnoreCase("customerList")) {
 			action = new CustomerListAction();
 			forward = action.execute(req, res);
-		} 
+		}
 		
 
 		
