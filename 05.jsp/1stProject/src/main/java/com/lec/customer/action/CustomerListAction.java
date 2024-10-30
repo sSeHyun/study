@@ -30,7 +30,29 @@ public class CustomerListAction implements Action{
 		PageInfo pageInfo = new PageInfo();
 		
 		CustomerListService customerListService = CustomerListService.getInstance();
+		int listCount=customerListService.getListCount(f, q);
+		customerList = customerListService.getCustomerList(p, limit, f, q);
+		
+		//페이징 처리
+		//1. 총 페이지수 = (총레코드수 / limit ) + 1 
+		int totalPage = (int)((double)listCount/limit + 0.95);
+		
+		//2. 현재페이지 ( 1~10 , 11~20 , 21~30....)
+		int startPage = (p-1) / 10 * 10 +1;
+		
+		//3. 마지막페이지 
+		int endPage = startPage + 9;
+		endPage= endPage > totalPage ? (totalPage > 0 ? totalPage : 1) : endPage;
+		
+		pageInfo.setListCount(listCount);
+		pageInfo.setPage(p);
+		pageInfo.setTotalPage(totalPage);
+		pageInfo.setStartPage(startPage);
+		pageInfo.setEndPage(endPage);
+		
+		
 		req.setAttribute("customerList", customerList);
+		req.setAttribute("pageInfo", pageInfo);
 		
 		ActionForward forward = new ActionForward();
 		forward.setPath(String.format("/customer/customer_list.jsp?p=%s&f=%s&q=%s", p, f, q));

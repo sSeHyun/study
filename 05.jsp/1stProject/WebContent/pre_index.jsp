@@ -11,6 +11,7 @@
 </head>
 <body>
 	<center>
+		<a class="btn btn-success" href="customerLoginForm.cs">로그인</a>
 		<a class="btn btn-success" href="customerCreateForm.cs">회원생성</a>
 		<a class="btn btn-success" href="customerList.cs">회원목록</a>
 	</center>

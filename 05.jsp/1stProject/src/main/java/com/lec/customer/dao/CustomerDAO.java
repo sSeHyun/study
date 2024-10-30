@@ -85,7 +85,7 @@ public class CustomerDAO {
 		return listCount;
 	}
 	
-	//회원 목록 조회하기
+	//3. 회원 목록 조회하기
 
 	public List<CustomerVO> selectCustomerList(int p, int l, String f, String q) {
 		
@@ -114,8 +114,7 @@ public class CustomerDAO {
 				customer.setJumin(rs.getString("customer_jumin"));
 				customer.setPhone(rs.getString("customer_phone"));
 				customer.setAddr(rs.getString("customer_addr"));
-				customer.setEmail(rs.getString("customer_email"));
-			
+				customer.setEmail(rs.getString("customer_email"));	
 				
 				customerList.add(customer);
 			}
@@ -129,5 +128,35 @@ public class CustomerDAO {
 		
 	
 	}
+	
+	//회원 확인(아이디, 비밀번호) 
+	public boolean isRightCustomer(String customer_id,String customer_pw) {
+		
+		boolean isCustomer = false;
+		
+		CustomerVO customer = new CustomerVO();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql = "select * from customer where customer_id = ? and customer_pw = ? ";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, customer_id);
+			pstmt.setString(2, customer_pw);
+			rs = pstmt.executeQuery();
+			rs.next();
+			if(customer_id.equals(rs.getString("customer_id")) &&
+			   customer_pw.equals(rs.getString("customer_pw"))) isCustomer=true;
+			
+		}catch (Exception e) {
+			System.out.println("CustomerDAO_로그인 실패!"+ e.getMessage());
+		}finally {
+			JDBCUtility.close(null, pstmt, rs);
+		}
+		
+		return isCustomer;
+	}
+	
 
 }

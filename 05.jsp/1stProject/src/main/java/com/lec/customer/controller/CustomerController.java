@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.lec.customer.action.Action;
 import com.lec.customer.action.CustomerCreateAction;
 import com.lec.customer.action.CustomerListAction;
+import com.lec.customer.action.CustomerLoginAction;
 import com.lec.customer.vo.ActionForward;
 
 
@@ -50,6 +51,12 @@ public class CustomerController extends HttpServlet {
 			forward.setPath("/customer/customer_create.jsp");
 		} else if(command.equalsIgnoreCase("customerCreate")) {
 			action = new CustomerCreateAction();
+			forward = action.execute(req, res);
+		} else if(command.equalsIgnoreCase("customerLoginForm")) {
+			forward = new ActionForward();
+			forward.setPath("/customer/customer_login.jsp");
+		} else if(command.equalsIgnoreCase("customerLogin")) {
+			action = new CustomerLoginAction();
 			forward = action.execute(req, res);
 		} else if(command.equalsIgnoreCase("customerList")) {
 			action = new CustomerListAction();

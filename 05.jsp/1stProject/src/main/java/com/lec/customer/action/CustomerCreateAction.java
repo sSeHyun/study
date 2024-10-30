@@ -34,8 +34,6 @@ public class CustomerCreateAction implements Action {
 			boolean isIdSuccess = customercreateService.registerCustomer(customer);
 			
 			if(isIdSuccess) {
-				forward =new ActionForward();
-		
 				
 				System.out.println("id parameter: " + req.getParameter("customer_id"));
 				System.out.println("pw parameter: " + req.getParameter("customer_pw"));
@@ -44,6 +42,11 @@ public class CustomerCreateAction implements Action {
 				System.out.println("phone parameter: " + req.getParameter("customer_phone"));
 				System.out.println("addr parameter: " + req.getParameter("customer_addr"));
 				System.out.println("email parameter: " + req.getParameter("customer_email"));
+				
+				forward =new ActionForward();
+				forward.setRedirect(true);
+				forward.setPath("customerList.cs");
+				
 				
 			}else {
 				res.setContentType("text/html ; charset=utf-8");
@@ -57,9 +60,6 @@ public class CustomerCreateAction implements Action {
 			
 		}catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("id parameter: " + req.getParameter("customer_id"));
-			System.out.println("pw parameter: " + req.getParameter("customer_pw"));
-			System.out.println("name parameter: " + req.getParameter("customer_name"));	
 		}
 		return forward;
 	}

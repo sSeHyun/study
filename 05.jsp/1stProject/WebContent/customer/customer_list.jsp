@@ -52,13 +52,13 @@
 			<tbody>
 			<c:forEach var="customer" items="${ customerList }">
 				<tr>
-					<td>${ customer.getId }</td>
-					<td>${ customer.getPw }</td>
-					<td>${ customer.getName }</td>
-					<td>${ customer.getJumin }</td>
-					<td>${ customer.getPhone }</td>
-					<td>${ customer.getAddr }</td>
-					<td>${ customer.getEmail }</td>					
+					<td>${ customer.getId() }</td>
+					<td>${ customer.getPw() }</td>
+					<td>${ customer.getName() }</td>
+					<td>${ customer.getJumin() }</td>
+					<td>${ customer.getPhone() }</td>
+					<td>${ customer.getAddr() }</td>
+					<td>${ customer.getEmail() }</td>					
 				</tr>
 			</c:forEach>
 			</tbody>
