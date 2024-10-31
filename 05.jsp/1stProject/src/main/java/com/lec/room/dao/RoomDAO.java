@@ -37,14 +37,14 @@ public class RoomDAO {
 		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from roominfo1"
-					+" where " + f + " like ? "
-					+ " limit ? , " + l ; 
+		String sql = "select * from roominfo1 "
+				   + " where " + f + " like ?"
+				   + " limit ?, " + l;
 		
+
 		int startRow = (p-1) * l ;
 		
-		try {
-			
+		try {	
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, "%" + q + "%");
 			pstmt.setInt(2, startRow);
@@ -55,6 +55,7 @@ public class RoomDAO {
 				room.setRoom_id(rs.getString("room_id"));
 				room.setRoom_peopleCnt(rs.getInt("room_peopleCnt"));
 				room.setRoom_type(rs.getString("room_type"));
+				room.setRoom_price(rs.getString("room_price"));
 				
 				roomList.add(room);
 			}
@@ -64,9 +65,6 @@ public class RoomDAO {
 		}finally {
 			JDBCUtility.close(null,pstmt,rs);
 		}
-		
-		
-		
 		
 		return roomList;
 	}
@@ -95,6 +93,50 @@ public class RoomDAO {
 		return listCount;
 	}
 
+	//객실 선택 
+	public RoomVO selectRoom(String room_id) {
+		
+		RoomVO room = new RoomVO();
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from roominfo1 where room_id = ? ";
 
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, room_id);
+			rs=pstmt.executeQuery();
+
+			if(rs.next()) {
+				room.setRoom_id(room_id);
+				room.setRoom_peopleCnt(rs.getInt("room_peopleCnt"));
+				room.setRoom_type(rs.getString("room_type"));
+				room.setRoom_price(rs.getString("room_price"));		
+			}
+			
+		}catch (Exception e) {
+			System.out.println("객실 예약 실패!" + e.getMessage());
+		}finally {
+			JDBCUtility.close(conn, pstmt, rs);
+		}
+		
+		return room;
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

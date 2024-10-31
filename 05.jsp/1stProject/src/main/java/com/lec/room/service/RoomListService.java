@@ -10,6 +10,7 @@ import com.lec.room.dao.RoomDAO;
 import com.lec.room.vo.RoomVO;
 
 public class RoomListService {
+	
 	private RoomListService() {}
 	private static RoomListService roomListService = null;
 	
@@ -30,7 +31,8 @@ public class RoomListService {
 		
 		return listCount;
 	}
-	public List<RoomVO> getCustomerList(int p, int l ,String f, String q){
+
+	public List<RoomVO> getRoomList(int p, int l, String f, String q) {
 		
 		List<RoomVO> roomList = new ArrayList<RoomVO>();
 		Connection conn = JDBCUtility.getConnection();

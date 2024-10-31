@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.lec.customer.action.Action;
 import com.lec.customer.vo.ActionForward;
 import com.lec.room.action.RoomListAction;
+import com.lec.room.action.RoomReservationAction;
+import com.lec.room.action.RoomDetailAction;
 
 @WebServlet("*.ht")
 public class RoomController extends HttpServlet {
@@ -44,16 +46,19 @@ public class RoomController extends HttpServlet {
 		
 		RequestDispatcher dispatcher = null;
 		
-		if(command.equalsIgnoreCase("roomWriteForm")) {
+		if(command.equalsIgnoreCase("roomCreateForm")) {
 			forward = new ActionForward();
 			forward.setPath("/room/room_create.jsp");
-		} else if(command.equalsIgnoreCase("roomCreate")) {
-//			action = new RoomCreateAction();
-//			forward = action.execute(req, res);
 		} else if(command.equalsIgnoreCase("roomList")) {
 			action = new RoomListAction();
 			forward = action.execute(req, res);
-		}
+		} else if(command.equalsIgnoreCase("roomDetail")) {
+			action = new RoomDetailAction();
+			forward = action.execute(req, res);
+		}else if(command.equalsIgnoreCase("roomReservation")) {
+			action = new RoomReservationAction();
+			forward = action.execute(req, res);
+	}
 		
 		
 		

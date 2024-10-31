@@ -16,10 +16,11 @@ public class CustomerCreateAction implements Action {
 	public ActionForward execute(HttpServletRequest req, HttpServletResponse res) {
 		
 		ActionForward forward = null;
-		CustomerVO customer = null;
+		CustomerVO customer=null;
 		ServletContext context = req.getServletContext();
 		
 		try {
+			
 			customer=new CustomerVO();
 			
 			customer.setId(req.getParameter("customer_id"));
@@ -28,26 +29,15 @@ public class CustomerCreateAction implements Action {
 			customer.setJumin(req.getParameter("customer_jumin"));
 			customer.setPhone(req.getParameter("customer_phone"));
 			customer.setAddr(req.getParameter("customer_addr"));
-			customer.setEmail(req.getParameter("customer_email"));	
-	
-			CustomerCreateService customercreateService = CustomerCreateService.getInstance();
-			boolean isIdSuccess = customercreateService.registerCustomer(customer);
+			customer.setEmail(req.getParameter("customer_email"));
+			
+			CustomerCreateService customerCreateService = CustomerCreateService.getInstance(); 
+			boolean isIdSuccess = customerCreateService.registerCustomer(customer);
 			
 			if(isIdSuccess) {
-				
-				System.out.println("id parameter: " + req.getParameter("customer_id"));
-				System.out.println("pw parameter: " + req.getParameter("customer_pw"));
-				System.out.println("name parameter: " + req.getParameter("customer_name"));
-				System.out.println("jumin parameter: " + req.getParameter("customer_jumin"));
-				System.out.println("phone parameter: " + req.getParameter("customer_phone"));
-				System.out.println("addr parameter: " + req.getParameter("customer_addr"));
-				System.out.println("email parameter: " + req.getParameter("customer_email"));
-				
 				forward =new ActionForward();
 				forward.setRedirect(true);
-				forward.setPath("customerList.cs");
-				
-				
+				forward.setPath("customerList.cs");				
 			}else {
 				res.setContentType("text/html ; charset=utf-8");
 				PrintWriter out =res.getWriter();
@@ -57,10 +47,10 @@ public class CustomerCreateAction implements Action {
 				out.println("</script>");
 			}
 			
-			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 		return forward;
 	}
 

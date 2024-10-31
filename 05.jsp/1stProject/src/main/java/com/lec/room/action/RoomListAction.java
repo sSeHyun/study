@@ -29,12 +29,13 @@ public class RoomListAction implements Action{
 		if(req.getParameter("f") != null) f = req.getParameter("f"); else f = "room_id";
 		if(req.getParameter("q") != null) q = req.getParameter("q");
 		
+		
 		List<RoomVO> roomList = new ArrayList<>();
 		PageInfo pageInfo = new PageInfo();
 		
 		RoomListService roomListService = RoomListService.getInstance();
 		int listCount=roomListService.getListCount(f, q);
-		roomList = roomListService.getCustomerList(p, limit, f, q);
+		roomList = roomListService.getRoomList(p, limit, f, q);
 		
 		//페이징 처리
 		//1. 총 페이지수 = (총레코드수 / limit ) + 1 

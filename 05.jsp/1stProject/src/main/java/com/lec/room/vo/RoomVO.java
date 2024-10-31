@@ -5,6 +5,7 @@ public class RoomVO {
 	private String room_id;
 	private int room_peopleCnt;
 	private String room_type;
+	private String room_price;
 	
 	public String getRoom_id() {
 		return room_id;
@@ -25,11 +26,18 @@ public class RoomVO {
 		this.room_type = room_type;
 	}
 	
+	public String getRoom_price() {
+		return room_price;
+	}
+	public void setRoom_price(String room_price) {
+		this.room_price = room_price;
+	}
 	
 	@Override
 	public String toString() {
-		return "RoomVO [room_id=" + room_id + ", room_peopleCnt=" + room_peopleCnt + ", room_type=" + room_type + "]";
+		return "RoomVO [room_id=" + room_id + ", room_peopleCnt=" + room_peopleCnt + ", room_type=" + room_type
+				+ ", room_price=" + room_price + "]";
 	}
-	
+
 
 }

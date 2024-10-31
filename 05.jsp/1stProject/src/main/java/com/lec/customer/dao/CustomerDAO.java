@@ -70,6 +70,8 @@ public class CustomerDAO {
 		String sql = "select count(*) from customer "
 				   + " where " + f + " like ? ";	
 		
+		System.out.println("customer_q:"+q);
+		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, "%" + q + "%");
@@ -99,7 +101,7 @@ public class CustomerDAO {
 				   + " limit ?, " + l;
 		
 		int startRow = (p-1) * l;
-		
+		System.out.println("customer_q:"+q);
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, "%" + q + "%");
