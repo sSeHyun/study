@@ -16,8 +16,8 @@
 	
 	<div class="container" align="center">
 		<div class="jumbotron">
-			<h3>회원 생성</h3>
-			<p>회원정보 생성 페이지 입니다!! 회원정보를 작성해 주세요!!</p>
+			<h3>회원 가입</h3>
+			<p>회원가입 페이지 입니다!! 회원정보를 작성해 주세요!!</p>
 		</div>	
 		
 		<form action="customerCreate.cs" method="post"  name="customerForm">

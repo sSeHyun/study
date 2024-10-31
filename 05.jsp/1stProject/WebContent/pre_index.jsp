@@ -23,11 +23,13 @@
 	<a class="btn btn-success" href="customerLogout.cs">로그아웃</a>
 	<%}%>
 	
-	<%if(customer_id == null)%>
-	<a class="btn btn-success" href="customerLoginForm.cs">로그인</a>
-	
-	<a class="btn btn-success" href="customerCreateForm.cs">회원생성</a>
+	<%if(customer_id == null){%>
+	<a class="btn btn-success" href="customerLoginForm.cs" >로그인</a>
+	<a class="btn btn-success" href="customerCreateForm.cs">회원가입</a>
+	<%}%>
 	<a class="btn btn-success" href="customerList.cs">회원목록</a>
+	<a class="btn btn-success" href="roomList.ht">객실목록</a>
+	
 	</center>
 
 </body>

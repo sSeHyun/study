@@ -47,7 +47,8 @@ public class CustomerLoginAction implements Action {
 					
 				forward =new ActionForward();
 				forward.setRedirect(true);
-				forward.setPath("customerList.cs");	//이후 main.cs로 수정해야함.
+				forward.setPath("pre_index.jsp");	//이후 main.cs로 수정해야함.
+				
 						
 				
 			}else {
