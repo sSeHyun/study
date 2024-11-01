@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.lec.customer.action.Action;
 import com.lec.customer.vo.ActionForward;
 import com.lec.room.action.RoomListAction;
+import com.lec.room.action.RoomPickDateAction;
 import com.lec.room.action.RoomReservationAction;
 import com.lec.room.action.RoomDetailAction;
 
@@ -58,7 +59,12 @@ public class RoomController extends HttpServlet {
 		}else if(command.equalsIgnoreCase("roomReservation")) {
 			action = new RoomReservationAction();
 			forward = action.execute(req, res);
+		}else if(command.equalsIgnoreCase("roomPickDate")) {
+			action = new RoomPickDateAction();
+			forward = action.execute(req, res);
 	}
+	
+
 		
 		
 		

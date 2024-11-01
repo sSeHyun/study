@@ -17,7 +17,7 @@ public class RoomReservationService {
 	}
 
 
-	public RoomVO getRoom(String room_id) {
+	public RoomVO getReservationRoom(String room_id) {
 		
 		RoomVO room = null;
 		

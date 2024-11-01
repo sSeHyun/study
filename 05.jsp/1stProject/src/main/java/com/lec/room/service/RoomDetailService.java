@@ -9,14 +9,14 @@ import com.lec.room.vo.RoomVO;
 public class RoomDetailService {
 	
 	private RoomDetailService() {}
-	private static RoomDetailService roomreservationService = null;
+	private static RoomDetailService roomDetailService = null;
 
 	public static RoomDetailService getInstance() {
-		if(roomreservationService == null ) roomreservationService = new RoomDetailService();
-		return roomreservationService;
+		if(roomDetailService == null ) roomDetailService = new RoomDetailService();
+		return roomDetailService;
 	}
 
-	public RoomVO getRoom(String room_id) {
+	public RoomVO getDetailServiceRoom(String room_id) {
 		
 		RoomVO room = null;
 		
